@@ -1,0 +1,25 @@
+.page {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-left: 5px;
+    background-color: #ededf5;
+}
+
+#menus {
+    height: 120vh;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-start: 2;
+    grid-auto-flow: row;
+    grid-gap: 10px;
+    margin-top: 50px;
+    margin-left: 15%;
+}
+
+.carteNote.faceResto>img {
+    width: 40px;
+    height: 20px;
+    border-radius: 50%;
+}

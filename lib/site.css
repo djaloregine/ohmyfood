@@ -1,0 +1,283 @@
+@charset "UTF-8";
+/* VARIABLES DE GRID */
+/* width = (collum-width*(span)( + (gutter-width*(span-1))
+span = étendue */
+/* VARIABLES DE COULEURS */
+/* VARIABLES DE FONT */
+/* pour appeler la variable font-size: map-get($font-size,elementsMenu) */
+/* OC */
+/*@mixin grid-unit($span:1) {
+    span: $span;
+    float: left;
+    margin-right: $gutter-width;
+    width: ($column-width * $span) + ($gutter-width * ($span));
+}
+*/
+/* sur les indexUn, Deux, etc. */
+/* OC */
+.page {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin-left: 15px;
+}
+
+#menus {
+  height: 120vh;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-start: 2;
+  grid-auto-flow: row;
+  grid-gap: 10px;
+  margin-top: 50px;
+  margin-left: 15%;
+}
+
+.carteNote.faceResto > img {
+  width: 40px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.barre {
+  background-image: url(../images/wax8.jpeg);
+  height: 12vh;
+  text-align: center;
+}
+.barre__futur {
+  width: 40%;
+  margin-top: 100;
+}
+.barre__heading--grey {
+  background: #bebdc2;
+  height: 40px;
+}
+.barre__footer {
+  background: #bebdc2;
+}
+
+.text__barre--capitales {
+  font-size: 70px;
+  color: #f7f5fc;
+  text-shadow: 4px 4px 4px black;
+  letter-spacing: 2px;
+  padding-top: 2vh;
+}
+.text__barre--capitales--futur {
+  font-size: 40px;
+  color: #f7f5fc;
+  text-shadow: 4px 4px 4px black;
+  letter-spacing: 2px;
+}
+.text__barre {
+  color: black;
+}
+
+.faceResto {
+  width: 60%;
+  height: 55vh;
+  border: solid 1px red;
+}
+.faceResto--text {
+  margin-top: 10vh;
+  height: 150px;
+  border: 1px solid green;
+  text-align: center;
+  color: #f7f5fc;
+}
+.faceResto.carteNote {
+  background-color: #881847;
+}
+.faceResto.carteNote .itemMenu {
+  text-align: center;
+  border: 2px solid transparent;
+  width: 50%;
+  height: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background-color: #881847;
+  position: relative;
+  z-index: 1;
+}
+.faceResto.carteNote .itemMenu:hover::after {
+  opacity: 1;
+}
+.faceResto.carteNote .itemMenu::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #e15891;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+}
+.faceResto.carteChic {
+  background-color: #aff184;
+}
+.faceResto.carteDelice {
+  background-color: #ef0d6c;
+}
+.faceResto.cartePalette {
+  background-color: #485f42;
+}
+
+/* sur indexUn, Deux et suite */
+.nomResto {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 4vh;
+  text-shadow: 2px 2px 3px black;
+}
+.nomResto .note {
+  font-family: fantasy;
+}
+.nomResto .chic {
+  font-family: "Trebuchet MS";
+}
+.nomResto .delice {
+  font-family: Georgia;
+}
+.nomResto .palette {
+  font-family: "Segoe UI";
+}
+
+.carte {
+  height: 80vh;
+  list-style-type: none;
+  padding-top: 2.5vh;
+  width: 60;
+}
+.carte__note {
+  background-color: #881847;
+  color: white;
+}
+
+.titre {
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 2.5vh;
+}
+
+li.plat {
+  list-style-type: none;
+}
+
+/* indexUn
+
+.entree__titre,
+.plat__titre,
+.dessert__titre {
+    @include grid-unit(12);
+}
+
+.entree__contenu,
+.plat__contenu,
+.dessert__contenu {
+    li {
+        list-style: none;
+    }
+
+    s &entree__contenu--lignes,
+    &plat__contenu--lignes,
+    &dessert__contenu--lignes {
+        @include grid-unit(9);
+    }
+
+    &--prix {
+        @include grid-unit(3);
+    }
+}
+*/
+/*
+.entree__titre {
+    &:hover {
+        &+.ligne__progress {
+            &>.--bar {
+                visibility: visible;
+                transform: scaleX(1);
+
+            }
+        }
+    }
+}
+
+.ligne__progress--bar {
+    @include propriete-ligne;
+    transform: scaleX(0);
+    transform-origin: left 50%;
+    transition: transform 1000ms cubic-bezier(.32, 0, .0.7, .1)
+}
+*/
+.entree__titre:hover + .ligne__progress > .--bar {
+  visibility: visible;
+  animation: barre-progression 1000ms;
+}
+
+/*
+@keyframes barre-progression {
+    0% {
+        transform: scaleX(0);
+        opacity: 20%;
+    }
+
+    15% {
+        transform: scaleX(.18);
+        opacity: 50%;
+    }
+
+    34% {
+        transform: scaleX(.4);
+        opacity: 75%;
+    }
+
+    66% {
+        transform: scaleX(.81);
+
+    }
+
+    66%,
+    100% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+*/
+/* OC */
+/* sur les entrées, plats, dessert &:hover. Pour ajouter de la fluidité, il faudra intégré un transition-property avec l'action transform ou autre et transition-duration ... Je peux aussi compresser transition avec action et duration */
+.form__field input {
+  border: 0.1rem solid #15DEA5;
+  background-color: #15DEA5;
+  color: #fff;
+}
+
+.form__group input {
+  border: 2px solid #D6FFF5;
+  border-radius: 100rem;
+  color: #6300a0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+  transition: background-color 500ms;
+}
+.form__group input:focus {
+  border: 2px solid #6300a0;
+}
+.form__group input:not(:focus):invalid {
+  background: #b20a37;
+  border: 2px solid #b20a37;
+  color: #fff;
+}
+
+/*# sourceMappingURL=site.css.map */

@@ -1,0 +1,77 @@
+/* VARIABLES DE GRID */
+$span : (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+$column-width : 60px; // 12 = 720px
+$gutter-width : 20px; // 11 = 220px 
+/* width = (collum-width*(span)( + (gutter-width*(span-1))
+span = étendue */
+
+$unit: 10px;
+
+
+
+/* VARIABLES DE COULEURS */
+$color : #ef0d6c;
+$rose-wax8: #881847;
+$rose-flashy-wax8: #ef0d6c;
+$rose-fonce-wax8: #301e26;
+$vert-fonce-wax8: #485f42;
+$vert-clair-wax8: #aff184;
+$gris-wax8: #8e8d92;
+$gris-clair: #bebdc2;
+
+$mauveWax12: #1f213c;
+$orangeWax12: #b6703f;
+$roseWax12: #e81361;
+$vertWax12: #228e82;
+
+$couleur-texte-titres:#f7f5fc;
+
+$couleur-texte-menu: #301e26;
+
+$couleur-carte-note : $rose-wax8;
+$couleur-carte-chic : $vert-clair-wax8;
+$couleur-carte-delice : $rose-flashy-wax8;
+$couleur-carte-palette : $vert-fonce-wax8;
+
+$background-color : (carte-note: #881847, carte-chic : $couleur-carte-chic, carte-delice: $couleur-carte-delice, carte-palette: $couleur-carte-palette);
+
+
+$cd-itemMenu-start :rgba(190, 189, 194, 0);
+$cd-itemMenu-end : rgba(190, 189, 194, 1);
+
+
+/* VARIABLES DE FONT */
+
+$font-family : (note:"Caveat", chic:"Trebuchet MS", delice: Georgia, palette:"Segoe UI");
+
+$font-size : (nomResto:3rem, itemMenu:1.5rem, categoriesMenu:3rem, elementsMenu:2rem);
+/* pour appeler la variable font-size: map-get($font-size,elementsMenu) */
+
+
+
+
+/* OC */
+$colour-primary: #15DEA5;
+$colour-secondary: #001534;
+$colour-accent: #D6FFF5;
+$colour-white: #fff;
+$colour-invalid: #DB464B;
+
+$txt-input-palette: (active: (bg: $colour-primary,
+        border: $colour-primary,
+        txt: $colour-white,
+    ),
+    focus: (bg: $colour-primary,
+        border: $colour-primary,
+        txt: $colour-white,
+    ),
+    invalid: (bg: $colour-invalid,
+        border: $colour-white,
+        txt: $colour-white,
+    ));
+
+
+$cd-txt: #6300a0;
+$cd-box: #D6FFF5;
+$cd-txt--invalid: #fff;
+$cd-danger: #b20a37;

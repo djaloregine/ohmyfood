@@ -1,0 +1,292 @@
+.barre {
+    @include fond-barre;
+
+
+    &__futur {
+        width: 40%;
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 25px;
+    }
+
+    &__heading--grey {
+        background: #bebdc2;
+        height: $unit*4;
+
+        .fa-search {
+            margin-left: -92%;
+            padding-top: 5px;
+        }
+    }
+
+    &__footer {
+        background: #bebdc2;
+        height: $unit*6;
+    }
+}
+
+.text {
+    &__barre--capitales {
+        font-size: $unit*7;
+        @include texte-titres;
+        padding-top: 2vh;
+
+    }
+
+    &__barre--capitales--futur {
+        font-size: $unit*4;
+        @include texte-titres;
+    }
+
+    &__barre {
+        color: black;
+    }
+
+    &__barre__mentions {
+        margin-left: -85%;
+    }
+
+    &__barre__contact {
+        margin-right: -85%;
+
+    }
+}
+
+.faceResto {
+    @include face-resto;
+
+    &--text {
+        @include texte-face-resto;
+    }
+
+    &.carteNote {
+        background-color: map-get($background-color, carte-note);
+
+        .itemMenu {
+            @include item-menu-dynamique;
+            font-size: map-get($font-size, itemMenu);
+            cursor: pointer;
+            background-color: $rose-wax8;
+            position: relative;
+            z-index: 1;
+
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: lighten($rose-wax8, 30%);
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 250ms;
+
+            }
+        }
+    }
+
+    &.carteChic {
+        background-color: map-get($background-color, carte-chic);
+
+    }
+
+    &.carteDelice {
+        background-color: map-get($background-color, carte-delice);
+
+    }
+
+    &.cartePalette {
+        background-color: map-get($background-color, carte-palette);
+    }
+
+
+}
+
+
+/* sur indexUn, Deux et suite */
+
+.nomResto {
+    font-size: map-get($font-size, nomResto);
+    @include intitule-resto;
+
+    .note {
+        font-family: map-get($font-family, note);
+    }
+
+    .chic {
+        font-family: map-get($font-family, chic);
+    }
+
+    .delice {
+        font-family: map-get($font-family, delice);
+    }
+
+
+    .palette {
+        font-family: map-get($font-family, palette);
+    }
+}
+
+.carte {
+    @include propriete-carte;
+
+    &__note {
+        background-color: map-get($background-color, carte-note);
+        color: white;
+    }
+}
+
+.titre {
+    @include propriete-titre;
+}
+
+li {
+    &.plat {
+        list-style-type: none;
+        @include propriete-plat;
+    }
+}
+
+
+
+/* indexUn
+
+.entree__titre,
+.plat__titre,
+.dessert__titre {
+    @include grid-unit(12);
+}
+
+.entree__contenu,
+.plat__contenu,
+.dessert__contenu {
+    li {
+        list-style: none;
+    }
+
+    s &entree__contenu--lignes,
+    &plat__contenu--lignes,
+    &dessert__contenu--lignes {
+        @include grid-unit(9);
+    }
+
+    &--prix {
+        @include grid-unit(3);
+    }
+}
+*/
+/*
+.entree__titre {
+    &:hover {
+        &+.ligne__progress {
+            &>.--bar {
+                visibility: visible;
+                transform: scaleX(1);
+
+            }
+        }
+    }
+}
+
+.ligne__progress--bar {
+    @include propriete-ligne;
+    transform: scaleX(0);
+    transform-origin: left 50%;
+    transition: transform 1000ms cubic-bezier(.32, 0, .0.7, .1)
+}
+*/
+.entree__titre {
+    &:hover {
+        &+.ligne__progress {
+            &>.--bar {
+                visibility: visible;
+                animation: barre-progression 1000ms;
+            }
+        }
+    }
+}
+
+/*
+@keyframes barre-progression {
+    0% {
+        transform: scaleX(0);
+        opacity: 20%;
+    }
+
+    15% {
+        transform: scaleX(.18);
+        opacity: 50%;
+    }
+
+    34% {
+        transform: scaleX(.4);
+        opacity: 75%;
+    }
+
+    66% {
+        transform: scaleX(.81);
+
+    }
+
+    66%,
+    100% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+*/
+
+
+
+
+/* OC */
+/* sur les entrées, plats, dessert &:hover. Pour ajouter de la fluidité, il faudra intégré un transition-property avec l'action transform ou autre et transition-duration ... Je peux aussi compresser transition avec action et duration */
+.form {
+    &__field {
+        & input {
+            @include txt-input-palette(focus);
+        }
+    }
+}
+
+.form {
+    &__group {
+        & input {
+            border: 2px solid $cd-box;
+            border-radius: 100rem;
+            color: $cd-txt;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            outline: none;
+            padding: .5rem 1.5rem;
+            width: 100%;
+            transition: background-color 500ms;
+
+            &:focus {
+                border: 2px solid $cd-txt;
+            }
+
+            &:not(:focus):invalid {
+                background: $cd-danger;
+                border: 2px solid $cd-danger;
+                color: $cd-txt--invalid;
+            }
+        }
+    }
+}
+
+
+
+
+
