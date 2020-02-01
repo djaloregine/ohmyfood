@@ -5,7 +5,6 @@ span = étendue */
 /* VARIABLES DE COULEURS */
 /* VARIABLES DE FONT */
 /* pour appeler la variable font-size: map-get($font-size,elementsMenu) */
-/* OC */
 /*@mixin grid-unit($span:1) {
     span: $span;
     float: left;
@@ -15,14 +14,16 @@ span = étendue */
 */
 /* sur les indexUn, Deux, etc. */
 /* OC */
-.page {
+.page,
+.pageUn {
   width: 100%;
   height: auto;
   overflow: hidden;
-  margin-left: 15px;
+  margin-left: 5px;
+  background-color: #ededf5;
 }
 
-#menus {
+#section-menus {
   height: 120vh;
   width: 80%;
   display: grid;
@@ -34,7 +35,7 @@ span = étendue */
   margin-left: 15%;
 }
 
-.carteNote.faceResto > img {
+.face--text > img {
   width: 40px;
   height: 20px;
   border-radius: 50%;
@@ -47,14 +48,22 @@ span = étendue */
 }
 .barre__futur {
   width: 40%;
-  margin-top: 100;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
 }
 .barre__heading--grey {
   background: #bebdc2;
   height: 40px;
 }
+.barre__heading--grey .fa-search {
+  margin-left: -92%;
+  padding-top: 5px;
+}
 .barre__footer {
   background: #bebdc2;
+  height: 60px;
 }
 
 .text__barre--capitales {
@@ -73,211 +82,105 @@ span = étendue */
 .text__barre {
   color: black;
 }
+.text__barre__mentions {
+  margin-left: -85%;
+}
+.text__barre__contact {
+  margin-right: -85%;
+}
 
-.faceResto {
-  width: 60%;
-  height: 55vh;
-  border: solid 1px red;
-}
-.faceResto--text {
-  margin-top: 10vh;
-  height: 150px;
-  border: 1px solid green;
-  text-align: center;
-  color: #f7f5fc;
-}
-.faceResto.carteNote {
+.face--note {
   background-color: #881847;
 }
-.faceResto.carteNote .itemMenu {
+.face--chic {
+  background-color: #aff184;
+}
+.face--delice {
+  background-color: #ef0d6c;
+}
+.face--palette {
+  background-color: #485f42;
+}
+
+.face {
+  width: 60%;
+  height: 55vh;
+}
+.face .face--text {
+  margin-top: 10vh;
+  height: 150px;
   text-align: center;
-  border: 2px solid transparent;
+  font-size: 2.5rem;
+  color: #f7f5fc;
+}
+.face .menu {
+  text-align: center;
   width: 50%;
   height: 5vh;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 100px;
   border-radius: 100%;
   font-size: 1.5rem;
+  color: #f7f5fc;
+  cursor: progress;
+}
+.face .menu:hover {
   cursor: pointer;
-  background-color: #881847;
-  position: relative;
-  z-index: 1;
 }
-.faceResto.carteNote .itemMenu:hover::after {
-  opacity: 1;
+.face .nom--note,
+.face .menu--note {
+  font-family: "Caveat";
 }
-.faceResto.carteNote .itemMenu::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #e15891;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity 250ms;
+.face .nom--note {
+  margin-top: 2px;
+  font-size: 3rem;
 }
-.faceResto.carteChic {
-  background-color: #aff184;
+.face .nom--chic,
+.face .menu--chic {
+  font-family: "Oswald";
 }
-.faceResto.carteDelice {
-  background-color: #ef0d6c;
+.face .nom-delice,
+.face .menu--delice {
+  font-family: "Roboto Slab";
 }
-.faceResto.cartePalette {
-  background-color: #485f42;
+.face .nom--palette,
+.face .menu-palette {
+  font-family: "Titillium Web";
 }
 
 /* sur indexUn, Deux et suite */
-.nomResto {
-  font-size: 3rem;
-  text-align: center;
-  margin-top: 4vh;
-  text-shadow: 2px 2px 3px black;
-}
-.nomResto .note {
-  font-family: fantasy;
-}
-.nomResto .chic {
-  font-family: "Trebuchet MS";
-}
-.nomResto .delice {
-  font-family: Georgia;
-}
-.nomResto .palette {
-  font-family: "Segoe UI";
-}
-
 .carte {
   height: 80vh;
   list-style-type: none;
-  padding-top: 2.5vh;
-  width: 60;
+  margin-top: 2vh;
+  padding-top: 2vh;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .carte__note {
   background-color: #881847;
-  color: white;
+}
+
+.nom--note--Un {
+  text-align: center;
+  margin-top: 4vh;
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 3px black;
+  font-family: "Caveat";
 }
 
 .titre {
   text-align: center;
   margin-top: 5vh;
   margin-bottom: 2.5vh;
+  color: #bebdc2;
 }
 
 li.plat {
   list-style-type: none;
-}
-
-/* indexUn
-
-.entree__titre,
-.plat__titre,
-.dessert__titre {
-    @include grid-unit(12);
-}
-
-.entree__contenu,
-.plat__contenu,
-.dessert__contenu {
-    li {
-        list-style: none;
-    }
-
-    s &entree__contenu--lignes,
-    &plat__contenu--lignes,
-    &dessert__contenu--lignes {
-        @include grid-unit(9);
-    }
-
-    &--prix {
-        @include grid-unit(3);
-    }
-}
-*/
-/*
-.entree__titre {
-    &:hover {
-        &+.ligne__progress {
-            &>.--bar {
-                visibility: visible;
-                transform: scaleX(1);
-
-            }
-        }
-    }
-}
-
-.ligne__progress--bar {
-    @include propriete-ligne;
-    transform: scaleX(0);
-    transform-origin: left 50%;
-    transition: transform 1000ms cubic-bezier(.32, 0, .0.7, .1)
-}
-*/
-.entree__titre:hover + .ligne__progress > .--bar {
-  visibility: visible;
-  animation: barre-progression 1000ms;
-}
-
-/*
-@keyframes barre-progression {
-    0% {
-        transform: scaleX(0);
-        opacity: 20%;
-    }
-
-    15% {
-        transform: scaleX(.18);
-        opacity: 50%;
-    }
-
-    34% {
-        transform: scaleX(.4);
-        opacity: 75%;
-    }
-
-    66% {
-        transform: scaleX(.81);
-
-    }
-
-    66%,
-    100% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: scaleX(1);
-    }
-}
-*/
-/* OC */
-/* sur les entrées, plats, dessert &:hover. Pour ajouter de la fluidité, il faudra intégré un transition-property avec l'action transform ou autre et transition-duration ... Je peux aussi compresser transition avec action et duration */
-.form__field input {
-  border: 0.1rem solid #15DEA5;
-  background-color: #15DEA5;
-  color: #fff;
-}
-
-.form__group input {
-  border: 2px solid #D6FFF5;
-  border-radius: 100rem;
-  color: #6300a0;
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.5rem;
-  outline: none;
-  padding: 0.5rem 1.5rem;
-  width: 100%;
-  transition: background-color 500ms;
-}
-.form__group input:focus {
-  border: 2px solid #6300a0;
-}
-.form__group input:not(:focus):invalid {
-  background: #b20a37;
-  border: 2px solid #b20a37;
-  color: #fff;
+  margin-top: 5px;
 }
 
 /*# sourceMappingURL=site.css.map */

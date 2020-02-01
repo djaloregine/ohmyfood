@@ -13,7 +13,7 @@
     text-align: center;
 }
 
-@mixin texte-titres {
+@mixin texte-titre-site {
     color: $couleur-texte-titres;
     text-shadow: $unit*0.4 $unit*0.4 $unit*0.4 black;
     letter-spacing: 2px;
@@ -22,42 +22,30 @@
 @mixin face-resto {
     width: 60%;
     height: 55vh;
-    border: solid 1px red;
+
 }
 
-@mixin texte-face-resto {
+@mixin face-texte {
     margin-top: 10vh;
     height: 150px;
-    border: 1px solid green;
     text-align: center;
+    font-size: 2.5rem;
     color: #f7f5fc;
 }
 
-@mixin item-menu-dynamique {
+@mixin propriete-menu {
     text-align: center;
-    border: 2px solid transparent;
     width: 50%;
     height: 5vh;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 100px;
     border-radius: 100%;
-
+    font-size: 1.5rem;
+    color: #f7f5fc;
 }
 
 /* sur les indexUn, Deux, etc. */
-
-@mixin propriete-ligne {
-    height: 5px;
-    background-color: #ef0d6c;
-    padding-top: 5px;
-    visibility: hidden;
-}
-
-@mixin intitule-resto {
-    text-align: center;
-    margin-top: 4vh;
-    text-shadow: 2px 2px 3px black;
-}
 
 @mixin propriete-carte {
     height: 80vh;
@@ -69,10 +57,24 @@
     margin-right: auto;
 }
 
-@mixin propriete-titre {
+@mixin intitule-resto {
+    text-align: center;
+    margin-top: 4vh;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 3px black;
+}
+
+@mixin propriete-titre-catégorie-plat {
     text-align: center;
     margin-top: 5vh;
     margin-bottom: 2.5vh;
+}
+
+@mixin propriete-ligne {
+    height: 5px;
+    background-color: #ef0d6c;
+    padding-top: 5px;
+    visibility: hidden;
 }
 
 @mixin propriete-plat {

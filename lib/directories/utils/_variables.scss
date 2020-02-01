@@ -42,36 +42,9 @@ $cd-itemMenu-end : rgba(190, 189, 194, 1);
 
 /* VARIABLES DE FONT */
 
-$font-family : (note:"Caveat", chic:"Trebuchet MS", delice: Georgia, palette:"Segoe UI");
+$font-family : (note:"Caveat", chic:"Oswald", delice: "Roboto Slab", palette:"Titillium Web");
 
-$font-size : (nomResto:3rem, itemMenu:1.5rem, categoriesMenu:3rem, elementsMenu:2rem);
+$font-size : (menu:1.5rem, categories-menu:3rem, elements-menu:2rem);
 /* pour appeler la variable font-size: map-get($font-size,elementsMenu) */
 
 
-
-
-/* OC */
-$colour-primary: #15DEA5;
-$colour-secondary: #001534;
-$colour-accent: #D6FFF5;
-$colour-white: #fff;
-$colour-invalid: #DB464B;
-
-$txt-input-palette: (active: (bg: $colour-primary,
-        border: $colour-primary,
-        txt: $colour-white,
-    ),
-    focus: (bg: $colour-primary,
-        border: $colour-primary,
-        txt: $colour-white,
-    ),
-    invalid: (bg: $colour-invalid,
-        border: $colour-white,
-        txt: $colour-white,
-    ));
-
-
-$cd-txt: #6300a0;
-$cd-box: #D6FFF5;
-$cd-txt--invalid: #fff;
-$cd-danger: #b20a37;
