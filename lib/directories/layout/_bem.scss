@@ -1,6 +1,9 @@
 .barre {
     @include fond-barre;
 
+    &__heading {
+        height: 12vh;
+    }
 
     &__futur {
         width: 40%;
@@ -35,7 +38,7 @@
     }
 
     &__barre--capitales--futur {
-        font-size: $unit*4;
+        font-size: $unit*2;
         @include texte-titre-site;
     }
 
@@ -95,10 +98,8 @@
     }
 
     .nom--note,
-    .menu--note,
-        {
+    .menu--note {
         font-family: map-get($font-family, note);
-
     }
 
     .nom--note {
@@ -111,7 +112,7 @@
         font-family: map-get($font-family, chic);
     }
 
-    .nom-delice,
+    .nom--delice,
     .menu--delice {
         font-family: map-get($font-family, delice);
     }
@@ -120,7 +121,10 @@
     .menu-palette {
         font-family: map-get($font-family, palette);
     }
+
 }
+
+
 
 
 
@@ -133,24 +137,58 @@
 
     &__note {
         background-color: map-get($background-color, carte-note);
+        font-family: map-get($font-family, note);
+    }
+
+    &__chic {
+        background-color: map-get($background-color, carte-chic);
+        font-family: map-get($font-family, chic);
     }
 }
 
-.nom--note--Un {
+.nom {
     @include intitule-resto;
-    font-family: map-get($font-family, note);
 
+    &--Un {
+        font-family: map-get($font-family, note);
+    }
+
+    &--Deux {
+        font-family: map-get($font-family, chic);
+        @include degrade-texte;
+        background-image: linear-gradient(45deg, rgb(231, 165, 90) 0 40%, rgba(120, 64, 239, 0.7) 50% 100%);
+    }
 }
-
 
 .titre {
     @include propriete-titre-catégorie-plat;
-    color: #bebdc2;
+
+    &__dynamique {
+        margin-top: 0px;
+        margin-left: -4px;
+    }
+
+
 }
+
+.trait-deux {
+    @include propriété-ligne__statique-chic;
+}
+
 
 li {
     &.plat {
         list-style-type: none;
         @include propriete-plat;
+    }
+}
+
+@supports (background-clip: text) {
+    .nom--chic {
+        background-image: linear-gradient(155deg, #d37410, #caa7ee);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
     }
 }

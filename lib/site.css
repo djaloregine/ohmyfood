@@ -35,16 +35,24 @@ span = étendue */
   margin-left: 15%;
 }
 
-.face--text > img {
-  width: 40px;
-  height: 20px;
+ul > li {
+  list-style: none;
+}
+
+.face--text > img,
+.carte__note > img {
+  width: 70px;
+  height: 35px;
   border-radius: 50%;
 }
 
 .barre {
-  background-image: url(../images/wax8.jpeg);
-  height: 12vh;
+  background-color: #579c87;
+  height: 6vh;
   text-align: center;
+}
+.barre__heading {
+  height: 12vh;
 }
 .barre__futur {
   width: 40%;
@@ -68,14 +76,14 @@ span = étendue */
 
 .text__barre--capitales {
   font-size: 70px;
-  color: #f7f5fc;
+  color: #fdcb46;
   text-shadow: 4px 4px 4px black;
   letter-spacing: 2px;
   padding-top: 2vh;
 }
 .text__barre--capitales--futur {
-  font-size: 40px;
-  color: #f7f5fc;
+  font-size: 20px;
+  color: #fdcb46;
   text-shadow: 4px 4px 4px black;
   letter-spacing: 2px;
 }
@@ -90,16 +98,16 @@ span = étendue */
 }
 
 .face--note {
-  background-color: #881847;
+  background-color: #fcdfdb;
 }
 .face--chic {
-  background-color: #aff184;
+  background-color: #fff5fe;
 }
 .face--delice {
-  background-color: #ef0d6c;
+  background-color: #f9f9f9;
 }
 .face--palette {
-  background-color: #485f42;
+  background-color: #fdfffd;
 }
 
 .face {
@@ -111,7 +119,6 @@ span = étendue */
   height: 150px;
   text-align: center;
   font-size: 2.5rem;
-  color: #f7f5fc;
 }
 .face .menu {
   text-align: center;
@@ -122,7 +129,6 @@ span = étendue */
   margin-top: 100px;
   border-radius: 100%;
   font-size: 1.5rem;
-  color: #f7f5fc;
   cursor: progress;
 }
 .face .menu:hover {
@@ -130,7 +136,7 @@ span = étendue */
 }
 .face .nom--note,
 .face .menu--note {
-  font-family: "Caveat";
+  font-family: "Molle";
 }
 .face .nom--note {
   margin-top: 2px;
@@ -138,20 +144,20 @@ span = étendue */
 }
 .face .nom--chic,
 .face .menu--chic {
-  font-family: "Oswald";
+  font-family: "Lobster Two";
 }
-.face .nom-delice,
+.face .nom--delice,
 .face .menu--delice {
-  font-family: "Roboto Slab";
+  font-family: "Sacramento";
 }
 .face .nom--palette,
 .face .menu-palette {
-  font-family: "Titillium Web";
+  font-family: "Satisfy";
 }
 
 /* sur indexUn, Deux et suite */
 .carte {
-  height: 80vh;
+  height: 120vh;
   list-style-type: none;
   margin-top: 2vh;
   padding-top: 2vh;
@@ -160,27 +166,60 @@ span = étendue */
   margin-right: auto;
 }
 .carte__note {
-  background-color: #881847;
+  background-color: #fcdfdb;
+  font-family: "Molle";
+}
+.carte__chic {
+  background-color: #fff5fe;
+  font-family: "Lobster Two";
 }
 
-.nom--note--Un {
+.nom {
   text-align: center;
   margin-top: 4vh;
-  font-size: 3.5rem;
-  text-shadow: 2px 2px 3px black;
-  font-family: "Caveat";
+  font-size: 2rem;
+}
+.nom--Un {
+  font-family: "Molle";
+}
+.nom--Deux {
+  font-family: "Lobster Two";
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(45deg, #e7a55a 0 40%, rgba(120, 64, 239, 0.7) 50% 100%);
 }
 
 .titre {
-  text-align: center;
+  margin-left: 10px;
   margin-top: 5vh;
   margin-bottom: 2.5vh;
-  color: #bebdc2;
+  font-size: 1.5rem;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+.titre__dynamique {
+  margin-top: 0px;
+  margin-left: -4px;
+}
+
+.trait-deux {
+  width: 150px;
 }
 
 li.plat {
   list-style-type: none;
   margin-top: 5px;
+}
+
+@supports (background-clip: text) {
+  .nom--chic {
+    background-image: linear-gradient(155deg, #d37410, #caa7ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 /*# sourceMappingURL=site.css.map */
