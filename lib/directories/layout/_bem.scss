@@ -85,16 +85,13 @@
     .face--text {
         @include face-texte;
 
+        &--note {
+            margin-top: 15vh;
+        }
     }
 
-    .menu {
-        font-size: map-get($font-size, itemMenu);
-        @include propriete-menu;
-        cursor: progress;
-
-        &:hover {
-            cursor: pointer;
-        }
+    .menu-note {
+        margin-top: 3vh;
     }
 
     .nom--note,
@@ -110,6 +107,16 @@
     .nom--chic,
     .menu--chic {
         font-family: map-get($font-family, chic);
+
+    }
+
+    .nom--chic {
+        @include degrade-texte;
+        background-image: linear-gradient(45deg, rgb(231, 165, 90) 0 40%, rgba(120, 64, 239, 0.7) 50% 100%);
+    }
+
+    .menu--chic {
+        color: rgb(231, 165, 90);
     }
 
     .nom--delice,
@@ -117,11 +124,38 @@
         font-family: map-get($font-family, delice);
     }
 
+    .nom--delice {
+        @include degrade-texte;
+        background-image: linear-gradient(90deg, rgba(51, 92, 240, 1), rgba(179, 205, 228, 0.5));
+    }
+
+    .menu--delice {
+        color: rgb(51, 92, 240, 1);
+    }
+
     .nom--palette,
     .menu-palette {
         font-family: map-get($font-family, palette);
     }
 
+    .nom--palette {
+        @include degrade-texte;
+        background-image: linear-gradient(180deg, rgba(38, 94, 31, 1), rgba(187, 255, 119, 0.5));
+    }
+
+    .menu--palette {
+        color: rgba(38, 94, 31);
+    }
+
+    .menu {
+        font-size: map-get($font-size, itemMenu);
+        @include propriete-menu;
+        cursor: progress;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 

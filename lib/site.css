@@ -115,24 +115,15 @@ ul > li {
   height: 55vh;
 }
 .face .face--text {
-  margin-top: 10vh;
-  height: 150px;
+  margin-top: 20vh;
   text-align: center;
   font-size: 2.5rem;
 }
-.face .menu {
-  text-align: center;
-  width: 50%;
-  height: 5vh;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
-  border-radius: 100%;
-  font-size: 1.5rem;
-  cursor: progress;
+.face .face--text--note {
+  margin-top: 15vh;
 }
-.face .menu:hover {
-  cursor: pointer;
+.face .menu-note {
+  margin-top: 3vh;
 }
 .face .nom--note,
 .face .menu--note {
@@ -146,13 +137,54 @@ ul > li {
 .face .menu--chic {
   font-family: "Lobster Two";
 }
+.face .nom--chic {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(45deg, #e7a55a 0 40%, rgba(120, 64, 239, 0.7) 50% 100%);
+}
+.face .menu--chic {
+  color: #e7a55a;
+}
 .face .nom--delice,
 .face .menu--delice {
   font-family: "Sacramento";
 }
+.face .nom--delice {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, #335cf0, rgba(179, 205, 228, 0.5));
+}
+.face .menu--delice {
+  color: #335cf0;
+}
 .face .nom--palette,
 .face .menu-palette {
   font-family: "Satisfy";
+}
+.face .nom--palette {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(180deg, #265e1f, rgba(187, 255, 119, 0.5));
+}
+.face .menu--palette {
+  color: #265e1f;
+}
+.face .menu {
+  text-align: center;
+  width: 50%;
+  height: 5vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2px;
+  border-radius: 100%;
+  font-size: 2.5rem;
+  cursor: progress;
+}
+.face .menu:hover {
+  cursor: pointer;
 }
 
 /* sur indexUn, Deux et suite */
