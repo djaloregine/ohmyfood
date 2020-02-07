@@ -13,34 +13,13 @@ span = étendue */
 }
 */
 /* sur les indexUn, Deux, etc. */
-@keyframes ligne {
-  0% {
-    width: 0px;
-    height: 0px;
-    background-color: rgba(211, 116, 16, 0.1);
-  }
-  25% {
-    width: 100px;
-    height: 2px;
-    background-color: rgba(211, 116, 16, 0.3);
-  }
-  75% {
-    width: 150px;
-    height: 4px;
-    background-color: rgba(211, 116, 16, 0.7);
-  }
-  100% {
-    width: 200px;
-    height: 5px;
-    background-color: #d37410;
-  }
-}
 /* OC */
 .page,
 .pageUn {
   width: 100%;
   height: auto;
   overflow: hidden;
+  margin-left: 5px;
   background-color: #ededf5;
 }
 
@@ -67,71 +46,55 @@ ul > li {
   border-radius: 50%;
 }
 
-.fa-music {
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(90deg, #c949bc, #ebb6e6);
-  text-align: center;
-}
-
 .barre {
   background-color: #579c87;
-  height: 7vh;
-  width: 100%;
+  height: 6vh;
+  text-align: center;
 }
 .barre__heading {
   height: 12vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
 }
 .barre__futur {
-  width: 35%;
+  width: 40%;
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 20px;
+  padding-top: 25px;
 }
 .barre__heading--grey {
   background: #bebdc2;
-  height: 50px;
+  height: 40px;
 }
-.barre__heading--grey.fa-search {
+.barre__heading--grey .fa-search {
   margin-left: -92%;
   padding-top: 5px;
 }
+.barre__footer {
+  background: #bebdc2;
+  height: 60px;
+}
 
-.text {
+.text__barre--capitales {
+  font-size: 70px;
+  color: #fdcb46;
+  text-shadow: 4px 4px 4px black;
+  letter-spacing: 2px;
+  padding-top: 2vh;
+}
+.text__barre--capitales--futur {
+  font-size: 20px;
   color: #fdcb46;
   text-shadow: 4px 4px 4px black;
   letter-spacing: 2px;
 }
-.text__barre--capitales {
-  font-size: 70px;
-}
-.text__barre--capitales--futur {
-  font-size: 25px;
-  margin-bottom: 3vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.text__barre {
+  color: black;
 }
 .text__barre__mentions {
-  font-size: 20px;
+  margin-left: -85%;
 }
 .text__barre__contact {
-  font-size: 20px;
-}
-
-footer {
-  margin-top: 2vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  margin-right: -85%;
 }
 
 .face--note {
@@ -141,7 +104,7 @@ footer {
   background-color: #fff5fe;
 }
 .face--delice {
-  background-color: #edefef;
+  background-color: #f9f9f9;
 }
 .face--palette {
   background-color: #fdfffd;
@@ -161,6 +124,7 @@ footer {
 }
 .face .menu-note {
   margin-top: 3vh;
+  transition: bac;
 }
 .face .nom--note,
 .face .menu--note {
@@ -209,74 +173,31 @@ footer {
 .face .menu--palette {
   color: #265e1f;
 }
-
-.menu {
+.face .menu {
   text-align: center;
   width: 50%;
-  height: 6vh;
+  height: 5vh;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2px;
-  border-radius: 50%;
+  border-radius: 100%;
   font-size: 2.5rem;
+  background-color: saddlebrown;
   cursor: progress;
 }
-.menu:hover {
+.face .menu:hover {
   cursor: pointer;
-}
-.menu a:link {
-  text-decoration: none;
-  color: inherit;
-}
-.menu a:visited {
-  color: inherit;
-}
-.menu.menu--note {
-  background-color: #fcdfdb;
-  transition: background-color 2s ease;
-}
-.menu.menu--note:hover {
-  background-color: #f0614e;
-}
-.menu.menu--chic {
-  background-color: #fff5fe;
-  transition: background-color 2s ease;
-}
-.menu.menu--chic:hover {
-  background-color: #ff5cef;
-}
-.menu.menu--delice {
-  background-color: #f9f9f9;
-  transition: background-color 2s ease;
-}
-.menu.menu--delice:hover {
-  background-color: #adadad;
-}
-.menu.menu--palette {
-  background-color: #fdfffd;
-  transition: background-color 2s ease;
-}
-.menu.menu--palette:hover {
-  background-color: #64ff64;
 }
 
 /* sur indexUn, Deux et suite */
 .carte {
-  height: 900px;
+  height: 120vh;
   list-style-type: none;
-  margin-top: 3vh;
+  margin-top: 2vh;
   padding-top: 2vh;
   width: 60%;
   margin-left: auto;
   margin-right: auto;
-}
-.carte__centree {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.carte .music {
-  text-align: center;
 }
 .carte__note {
   background-color: #fcdfdb;
@@ -285,22 +206,6 @@ footer {
 .carte__chic {
   background-color: #fff5fe;
   font-family: "Lobster Two";
-}
-.carte__delice {
-  background-color: #edefef;
-  font-family: "Sacramento";
-}
-.carte__palette {
-  background-color: #fdfffd;
-  font-family: "Satisfy";
-}
-
-.resto {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 2rem;
-  font-weight: normal;
-  text-align: center;
-  margin-top: 2vh;
 }
 
 .nom {
@@ -318,59 +223,37 @@ footer {
   color: transparent;
   background-image: linear-gradient(45deg, #e7a55a 0 40%, rgba(120, 64, 239, 0.7) 50% 100%);
 }
-.nom--Trois {
-  font-family: "Sacramento";
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(90deg, #335cf0, rgba(179, 205, 228, 0.5));
-}
-.nom--Quatre {
-  font-family: "Satisfy";
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(180deg, #265e1f, rgba(187, 255, 119, 0.5));
-}
 
 .titre {
+  margin-left: 10px;
   margin-top: 5vh;
-  margin-bottom: 0.5vh;
-  font-size: 1.2rem;
+  margin-bottom: 2.5vh;
+  font-size: 1.5rem;
   display: inline-grid;
-  grid-template-columns: repeat(3, 1.5fr);
-  grid-gap: 50px;
-  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
-.titre .traits {
-  width: 200px;
+.titre__dynamique {
+  margin-top: 0px;
+  margin-left: -4px;
 }
 
-.dynamique:hover {
-  animation: ligne 3500ms;
+.trait-deux {
+  width: 150px;
 }
 
 li.plat {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-left: -50px;
-  margin-right: 50px;
-  padding-top: 0.5rem;
-}
-li .prix {
-  padding-left: 100px;
+  list-style-type: none;
+  margin-top: 5px;
 }
 
-#pageUn .dessert__contenu {
-  margin-right: 80px;
+@supports (background-clip: text) {
+  .nom--chic {
+    background-image: linear-gradient(155deg, #d37410, #caa7ee);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
-#pageDeux .entree__contenu {
-  margin-left: -80px;
-}
-#pageDeux .entree__contenuli .prix {
-  margin-left: 150px;
-}
-
-/*# sourceMappingURL=site.css.map */
+/*# sourceMappingURL=css.map */

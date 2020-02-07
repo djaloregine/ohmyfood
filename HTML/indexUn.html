@@ -22,98 +22,100 @@
 <body>
 
 
-    <ul id="pageUn" class="pageUn">
+    <div id="pageUn" class="pageUn">
 
-        <div class="barre barre__heading">
+        <header class="barre barre__heading">
             <h1 class="text text__barre--capitales"> OHMYFOOD </h1>
-        </div>
+        </header>
 
         <div class="resto"> La Note enchantée </div>
 
         <div class="carte carte__note">
 
-            <img src="../images/note.jpg " alt="logo">
+            <div class="music"> <i class="fas fa-music fa-3x"> </i> </div>
             <div class="nom nom--Un"> La Note enchantée </div>
 
-            <div class="titre titre__entrée">
-                <img src="../images/gauche_note.jpg" alt="trait marron">
-                <p class="titre__dynamique--entree"> Prélude </p>
-                <img src="../images/droit_note.jpg" alt="trait marron">
-                <div class="ligne__progress">
-                    <div class="ligne__progress--bar"></div>
-                </div>
-            </div>
-
-            <ul class="plat entree__contenu">
-                <li class="plat entree__contenu--lignes"> Ravioles de foie gras accompagnés de leur crème à la
-                    truffe
-                    <span class="plat entree__contenu--lignes--prix"> 98€ </span> </li>
-                <li class="plat entree__contenu--lignes"> Caviar osciètre sur blini à la farine de blé noir <span
-                        class="plat entree__contenu--lignes--prix"> 115€ </span> </li>
-                <li class="plat entree__contenu--lignes"> Homard et espuma de potiron mariné aux zests d'orange
-                    <span class="plat entree__contenu--lignes--prix"> 89€ </span> </li>
-                <li class="plat entree__contenu--lignes"> Foie gras de canard cuit entier, confiture de figue et
-                    pain
-                    toasté <span class="plat entree__contenu--lignes--prix"> 105€ </span>
-                </li>
-            </ul>
-
-            <div class="titre titre__principal">
-                <img src="../images/gauche_note.jpg" alt="trait marron">
-                <p class="titre__dynamique--principal"> Point d'orgue </p>
-                <img src="../images/droit_note.jpg" alt="trait marron">
-                <div class="ligne__progress">
-                    <div class="ligne__progress--bar"></div>
-                </div>
-            </div>
-
-            <ul class="plat principal__contenu">
-                <li class="plat principal__contenu--lignes"> Noix de coquilles Saint-Jacques sur lit de purée de
-                    céleri-rave
-                    <span class="prix"> 102€ </span>
-                </li>
-                <li class="plat principal__contenu--lignes"> Langoustine poêlée, purée de patate douce <span
-                        class="prix">
-                        205€ </span> </li>
-                <li class="plat principal__contenu--lignes"> Mijoté de queue de boeuf et riz sauvage aux zests de
-                    citron
-                    <span class="prix"> 169€ </span> </li>
-
-                <div class="titre titre__dessert">
-                    <img src="../images/gauche_note.jpg" alt="trait marron">
-                    <p class="titre__dynamique--dessert"> Mouvement final </p>
-                    <img src="../images/droit_note.jpg" alt="trait marron">
-                    <div class="ligne__progress">
-                        <div class="ligne__progress--bar"></div>
+            <div class="carte__centree">
+                <div class="titre titre__entrée">
+                    <img src="../images/gauche_note.jpg" class="traits" alt="">
+                    <div class="dynamique"> Prélude <div class="ligne__progress">
+                        </div>
                     </div>
+                    <img src="../images/droit_note.jpg" class="traits" alt="">
                 </div>
 
-                <ul class="plat dessert__contenu">
-                    <li class="plat dessert__contenu--lignes"> Macaron noisette et chocolat, glace au caramel brun et
-                        sel
-                        de Guérande </li>
-                    <li class="plat dessert__contenu--lignes"> Baba au rhum revisité avec son coulis de citron </li>
-                    <li class="plat dessert__contenu--lignes"> Tarte au citron meringuée destructurée </li>
+
+
+                <ul class="entree__contenu">
+                    <li class="plat"> Ravioles de foie gras accompagnés de leur crème à la
+                        truffe
+                        <span class="prix"> 98€ </span> </li>
+                    <li class="plat"> Caviar osciètre sur blini à la farine de blé noir <span class="prix"> 115€ </span>
+                    </li>
+                    <li class="plat"> Homard et espuma de potiron mariné aux zests d'orange
+                        <span class="prix"> 89€ </span> </li>
+                    <li class="plat"> Foie gras de canard cuit entier, confiture de figue et
+                        pain
+                        toasté <span class="prix"> 105€ </span>
+                    </li>
                 </ul>
 
-            </ul>
+                <div class="titre titre__principal">
+                    <img src="../images/gauche_note.jpg" class="traits" alt="">
+                    <div class="dynamique"> Point d'orgue <div class="ligne__progress">
+                        </div>
+                    </div>
+                    <img src="../images/droit_note.jpg" class="traits" alt="">
 
-            <img src="images/note.jpg " alt="logo">
-            <div class="nom--note--Un"> La Note enchantée </div>
+                </div>
+
+                <ul class="principal__contenu">
+                    <li class="plat"> Noix de coquilles Saint-Jacques sur lit de purée de
+                        céleri-rave
+                        <span class="prix"> 102€ </span>
+                    </li>
+                    <li class="plat"> Langoustine poêlée, purée de patate douce <span class="prix">
+                            205€ </span> </li>
+                    <li class="plat"> Mijoté de queue de boeuf et riz sauvage aux zests de
+                        citron
+                        <span class="prix"> 169€ </span> </li>
+                </ul>
+
+                <div class="titre titre__dessert">
+                    <img src="../images/gauche_note.jpg" class="traits" alt="">
+                    <div class="dynamique"> Mouvement final <div class="ligne__progress">
+                        </div>
+                    </div>
+                    <img src="../images/droit_note.jpg" class="traits" alt="">
+
+                </div>
+
+                <ul class="dessert__contenu">
+                    <li class="plat"> Macaron noisette et chocolat, glace au caramel brun et
+                        sel
+                        de Guérande </li>
+                    <li class="plat"> Baba au rhum revisité avec son coulis de citron </li>
+                    <li class="plat"> Tarte au citron meringuée destructurée </li>
+                </ul>
+
+            </div>
+
+            <div class="nom nom--Un"> <i class="fas fa-music fa-1x"> </i> La Note enchantée </div>
 
         </div>
 
-        <div class="barre barre__footer">
+        <footer class="barre barre__footer">
             <p class="text text__barre__mentions"> Mentions obligatoires
             </p>
-            <p class="text text__barre__contact"> Contactez-nous </p>
-        </div>
+            <p class="text text__barre__contact"> Contactez-nous
+            </p>
+        </footer>
 
 
 
 
 
-
+    </div>
 
 </body>
 

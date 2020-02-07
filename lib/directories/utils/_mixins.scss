@@ -9,14 +9,24 @@
 
 @mixin fond-barre {
     background-color: #579c87;
-    height: 6vh;
-    text-align: center;
+    height: 7vh;
+    width: 100%;
+
 }
 
 @mixin texte-titre-site {
     color: $jaune-dore;
     text-shadow: $unit*0.4 $unit*0.4 $unit*0.4 black;
     letter-spacing: 2px;
+
+}
+
+@mixin propriete__footer {
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 @mixin face-resto {
@@ -29,31 +39,37 @@
     margin-top: 20vh;
     text-align: center;
     font-size: 2.5rem;
-
 }
 
 @mixin propriete-menu {
     text-align: center;
     width: 50%;
-    height: 5vh;
+    height: 6vh;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2px;
-    border-radius: 100%;
+    border-radius: 50%;
     font-size: 2.5rem;
-
 }
 
 /* sur les indexUn, Deux, etc. */
 
 @mixin propriete-carte {
-    height: 120vh;
+    height: 900px;
     list-style-type: none;
-    margin-top: 2vh;
+    margin-top: 3vh;
     padding-top: 2vh;
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+}
+
+@mixin propriete-text-resto-neutre {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+    margin-top: 2vh;
 }
 
 @mixin intitule-resto {
@@ -64,28 +80,72 @@
 }
 
 @mixin propriete-titre-catégorie-plat {
-    margin-left: 10px;
     margin-top: 5vh;
-    margin-bottom: 2.5vh;
-    font-size: 1.5rem;
+    margin-bottom: 0.5vh;
+    font-size: 1.2rem;
     display: inline-grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1.5fr);
+    grid-gap: 50px;
+    text-align: center;
 }
 
-@mixin propriété-ligne__statique-note {
-    width: 250px;
+@mixin propriete-carte-centree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-@mixin propriété-ligne__statique-chic {
-    width: 150px;
+
+
+@mixin propriété-ligne__statique {
+    width: 200px;
 }
+
+
+@keyframes ligne {
+    0% {
+        width: 0px;
+        height: 0px;
+        background-color: rgba(#d37410, .1);
+    }
+
+    25% {
+        width: 100px;
+        height: 2px;
+        background-color: rgba(#d37410, .3);
+    }
+
+    75% {
+        width: 150px;
+        height: 4px;
+        background-color: rgba(#d37410, .7);
+    }
+
+    100% {
+        width: 200px;
+        height: 5px;
+        background-color: rgba(#d37410, 1);
+    }
+}
+
+@mixin propriete-li-plat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: -50px;
+}
+
+
+
+
+
+
+
 
 @mixin degrade-texte {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-
 }
 
 
@@ -129,10 +189,3 @@
 
 
 /* OC */
-
-@mixin txt-input-palette($state) {
-    $palette: map-get($txt-input-palette, $state);
-    border: .1rem solid map-get($palette, border);
-    background-color: map-get($palette, bg);
-    color: map-get($palette, txt);
-}

@@ -3,57 +3,59 @@
 
     &__heading {
         height: 12vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
     }
 
     &__futur {
-        width: 40%;
+        width: 35%;
         margin-top: 40px;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 25px;
+        border-radius: 20px;
+
     }
 
     &__heading--grey {
         background: #bebdc2;
-        height: $unit*4;
+        height: $unit*5;
 
-        .fa-search {
+        &.fa-search {
             margin-left: -92%;
             padding-top: 5px;
         }
     }
-
-    &__footer {
-        background: #bebdc2;
-        height: $unit*6;
-    }
 }
 
 .text {
+    @include texte-titre-site;
+
     &__barre--capitales {
         font-size: $unit*7;
-        @include texte-titre-site;
-        padding-top: 2vh;
-
     }
 
     &__barre--capitales--futur {
-        font-size: $unit*2;
-        @include texte-titre-site;
-    }
-
-    &__barre {
-        color: black;
+        font-size: $unit*2.5;
+        margin-bottom: 3vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     &__barre__mentions {
-        margin-left: -85%;
+        font-size: $unit*2;
     }
 
     &__barre__contact {
-        margin-right: -85%;
-
+        font-size: $unit*2;
     }
+}
+
+footer {
+    @include propriete__footer;
 }
 
 .face {
@@ -92,6 +94,7 @@
 
     .menu-note {
         margin-top: 3vh;
+
     }
 
     .nom--note,
@@ -107,7 +110,6 @@
     .nom--chic,
     .menu--chic {
         font-family: map-get($font-family, chic);
-
     }
 
     .nom--chic {
@@ -146,20 +148,63 @@
     .menu--palette {
         color: rgba(38, 94, 31);
     }
-
-    .menu {
-        font-size: map-get($font-size, itemMenu);
-        @include propriete-menu;
-        cursor: progress;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
 }
 
 
+.menu {
+    font-size: map-get($font-size, itemMenu);
+    @include propriete-menu;
+    cursor: progress;
 
+    &:hover {
+        cursor: pointer;
+    }
+
+    a:link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:visited {
+        color: inherit;
+    }
+
+    &.menu--note {
+        background-color: #fcdfdb;
+        transition: background-color 2s ease;
+
+        &:hover {
+            background-color: darken(#fcdfdb, 30)
+        }
+    }
+
+    &.menu--chic {
+        background-color: #fff5fe;
+        transition: background-color 2s ease;
+
+        &:hover {
+            background-color: darken(#fff5fe, 30)
+        }
+    }
+
+    &.menu--delice {
+        background-color: #f9f9f9;
+        transition: background-color 2s ease;
+
+        &:hover {
+            background-color: darken(#f9f9f9, 30)
+        }
+    }
+
+    &.menu--palette {
+        background-color: #fdfffd;
+        transition: background-color 2s ease;
+
+        &:hover {
+            background-color: darken(#fdfffd, 30);
+        }
+    }
+}
 
 
 
@@ -169,16 +214,41 @@
 .carte {
     @include propriete-carte;
 
+    &__centree {
+        @include propriete-carte-centree;
+    }
+
+    .music {
+        text-align: center;
+    }
+
     &__note {
         background-color: map-get($background-color, carte-note);
         font-family: map-get($font-family, note);
+
     }
 
     &__chic {
         background-color: map-get($background-color, carte-chic);
         font-family: map-get($font-family, chic);
     }
+
+    &__delice {
+        background-color: map-get($background-color, carte-delice);
+        font-family: map-get($font-family, delice);
+    }
+
+    &__palette {
+        background-color: map-get($background-color, carte-palette);
+        font-family: map-get($font-family, palette);
+    }
+
 }
+
+.resto {
+    @include propriete-text-resto-neutre;
+}
+
 
 .nom {
     @include intitule-resto;
@@ -192,37 +262,50 @@
         @include degrade-texte;
         background-image: linear-gradient(45deg, rgb(231, 165, 90) 0 40%, rgba(120, 64, 239, 0.7) 50% 100%);
     }
+
+    &--Trois {
+        font-family: map-get($font-family, delice);
+        @include degrade-texte;
+        background-image: linear-gradient(90deg, rgba(51, 92, 240, 1), rgba(179, 205, 228, 0.5));
+    }
+
+    &--Quatre {
+        font-family: map-get($font-family, palette);
+        @include degrade-texte;
+        background-image: linear-gradient(180deg, rgba(38, 94, 31, 1), rgba(187, 255, 119, 0.5));
+    }
 }
 
 .titre {
     @include propriete-titre-catégorie-plat;
 
-    &__dynamique {
-        margin-top: 0px;
-        margin-left: -4px;
+    .traits {
+        @include propriété-ligne__statique;
     }
-
-
 }
 
-.trait-deux {
-    @include propriété-ligne__statique-chic;
+.dynamique {
+    &:hover {
+
+        animation: ligne 3500ms;
+    }
 }
+
+
 
 
 li {
     &.plat {
-        list-style-type: none;
-        @include propriete-plat;
+        @include propriete-li-plat;
+        margin-right: 50px;
+        padding-top: 0.5rem;
+    }
+
+    .prix {
+        padding-left: 100px;
     }
 }
 
-@supports (background-clip: text) {
-    .nom--chic {
-        background-image: linear-gradient(155deg, #d37410, #caa7ee);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-
-    }
+#pageUn .dessert__contenu {
+    margin-right: 80px;
 }
