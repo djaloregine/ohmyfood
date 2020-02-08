@@ -41,7 +41,7 @@ span = étendue */
   width: 100%;
   height: auto;
   overflow: hidden;
-  background-color: #ededf5;
+  background-color: #e1e1e7;
 }
 
 #section-menus {
@@ -289,6 +289,7 @@ footer {
 .carte__delice {
   background-color: #edefef;
   font-family: "Sacramento";
+  font-size: 1.5rem;
 }
 .carte__palette {
   background-color: #fdfffd;
@@ -320,6 +321,7 @@ footer {
 }
 .nom--Trois {
   font-family: "Sacramento";
+  font-size: 3rem;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -345,51 +347,122 @@ footer {
 .titre .traits {
   width: 200px;
 }
-
-.dynamique:hover {
-  animation: ligne 3500ms;
+.titre__deux {
+  grid-gap: 2px;
+}
+.titre__deux .entreeDeux {
+  color: #c77311;
+}
+.titre__deux .principalDeux {
+  color: #a56799;
+}
+.titre__deux .dessertDeux {
+  color: #6e4ccc;
+}
+.titre__trois {
+  display: flex;
+  grid-gap: 0px;
+}
+.titre__trois .dynamique {
+  font-size: 1.8rem;
 }
 
-li.platUn {
+/*
+
+.dynamique {
+    &:hover {
+
+        animation: ligne 3500ms;
+    }
+}
+*/
+/* les contenus des plats */
+.platUn {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: -50px;
+  padding-top: 0.7rem;
   margin-right: 50px;
-  padding-top: 0.5rem;
 }
-li .prix {
+.platUn .prix {
   padding-left: 100px;
 }
-li.platD {
+
+.platD {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: -50px;
+  padding-top: 0.7rem;
   margin-right: 40px;
-  padding-top: 0.5rem;
+  color: rgba(198, 116, 18, 0.5);
 }
-li .prix {
+.platD .prix {
   padding-left: 200px;
 }
-li.platDe {
+
+.platDe {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: -50px;
+  padding-top: 0.7rem;
   margin-right: 50px;
-  padding-top: 0.5rem;
+  color: rgba(165, 103, 153, 0.7);
 }
-li.platDe .prix {
+.platDe .prix {
+  padding-left: 100px;
+}
+
+.platDeu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: -50px;
+  padding-top: 0.7rem;
+  margin-left: -270px;
+  color: rgba(110, 76, 204, 0.7);
+}
+
+.platT {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: -50px;
+  padding-top: 0.7rem;
+  padding-top: 0.2rem;
+}
+.platT .prix {
   padding-left: 90px;
 }
-li.platDeu {
+
+.platTr {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: -50px;
-  padding-top: 0.5rem;
-  margin-left: -270px;
+  padding-top: 0.7rem;
+  padding-top: 0.2rem;
+}
+.platTr .prix {
+  padding-left: 80px;
+}
+
+.platTro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: -50px;
+  padding-top: 0.7rem;
+  padding-top: 0.2rem;
+}
+.platTro .prix {
+  padding-left: 240px;
+}
+
+.plat {
+  border: solid 2px red;
 }
 
 #pageUn .dessert__contenu {
