@@ -16,6 +16,7 @@
         margin-right: auto;
         border-radius: 20px;
 
+
     }
 
     &__heading--grey {
@@ -27,10 +28,28 @@
             padding-top: 5px;
         }
     }
+
+    &__footer {
+        @include propriete__footer;
+
+    }
 }
+
+footer p {
+    &:hover {
+        animation: propriete-tremblement 100ms cubic-bezier(.4, .1, .6, .9);
+        animation-iteration-count: 3;
+    }
+}
+
+
 
 .text {
     @include texte-titre-site;
+
+    &--contact {
+        text-decoration: none;
+    }
 
     &__barre--capitales {
         font-size: $unit*7;
@@ -41,8 +60,36 @@
         margin-bottom: 3vh;
         text-align: center;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        span .fa-circle {
+            @include propriete-fa-circle;
+        }
+
+        &:hover {
+
+            .fa1 {
+
+                animation: suspension 200ms $duree-delai-fa;
+                animation-fill-mode: both;
+            }
+
+            .fa2 {
+
+                animation: suspension 400ms $delai-deuxieme-fa;
+                animation-fill-mode: both;
+            }
+
+            .fa3 {
+                animation: suspension 600ms $delai-troisieme-fa;
+                animation-fill-mode: both;
+
+            }
+        }
+
+
     }
 
     &__barre__mentions {
@@ -54,9 +101,6 @@
     }
 }
 
-footer {
-    @include propriete__footer;
-}
 
 .face {
 
@@ -158,6 +202,7 @@ footer {
 
     &:hover {
         cursor: pointer;
+
     }
 
     a:link {
@@ -167,6 +212,7 @@ footer {
 
     a:visited {
         color: inherit;
+
     }
 
     &.menu--note {
@@ -174,8 +220,10 @@ footer {
         transition: background-color 2s ease;
 
         &:hover {
-            background-color: darken(#fcdfdb, 30)
+            background-color: lighten(#fcdfdb, 30);
+
         }
+
     }
 
     &.menu--chic {
@@ -183,7 +231,7 @@ footer {
         transition: background-color 2s ease;
 
         &:hover {
-            background-color: darken(#fff5fe, 30)
+            background-color: lighten(#fff5fe, 30);
         }
     }
 
@@ -192,7 +240,8 @@ footer {
         transition: background-color 2s ease;
 
         &:hover {
-            background-color: darken(#f9f9f9, 30)
+            background-color: lighten(#f9f9f9, 30);
+
         }
     }
 
@@ -201,12 +250,19 @@ footer {
         transition: background-color 2s ease;
 
         &:hover {
-            background-color: darken(#fdfffd, 30);
+            background-color: lighten(#fdfffd, 30);
         }
     }
 }
 
+.grossissement {
+    font-size: map-get($font-size, menu);
+    opacity: 1;
 
+    &:hover {
+        @include propriete-menu-grossissement;
+    }
+}
 
 
 /* sur indexUn, Deux et suite */
@@ -314,26 +370,12 @@ footer {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-/*
-
 .dynamique {
     &:hover {
-
         animation: ligne 3500ms;
     }
 }
-*/
+
 
 /* les contenus des plats */
 
@@ -400,10 +442,32 @@ footer {
     }
 }
 
-.plat {
-    border: solid 2px red;
+.platQ {
+    @include propriete-li-plat;
+    padding-top: 0.2rem;
+
+    .prix {
+        padding-left: 150px;
+    }
 }
 
+.platQu {
+    @include propriete-li-plat;
+    padding-top: 0.2rem;
+
+    .prix {
+        padding-left: 60px;
+    }
+}
+
+.platQua {
+    @include propriete-li-plat;
+    padding-top: 0.2rem;
+
+    .prix {
+        padding-left: 70px;
+    }
+}
 
 
 

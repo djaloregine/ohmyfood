@@ -5,6 +5,7 @@ span = étendue */
 /* VARIABLES DE COULEURS */
 /* VARIABLES DE FONT */
 /* pour appeler la variable font-size: map-get($font-size,elementsMenu) */
+/* VARIABLES POUR ANIMATIONS */
 /*@mixin grid-unit($span:1) {
     span: $span;
     float: left;
@@ -12,6 +13,29 @@ span = étendue */
     width: ($column-width * $span) + ($gutter-width * ($span));
 }
 */
+@keyframes suspension {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(-9999px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes propriete-tremblement {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(2%);
+  }
+  75% {
+    transform: translateX(-2%);
+  }
+}
+/*font-size du menu défini dans les variables*/
 /* sur les indexUn, Deux, etc. */
 @keyframes ligne {
   0% {
@@ -102,11 +126,28 @@ ul > li {
   margin-left: -92%;
   padding-top: 5px;
 }
+.barre__footer {
+  position: relative;
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+footer p:hover {
+  animation: propriete-tremblement 100ms cubic-bezier(0.4, 0.1, 0.6, 0.9);
+  animation-iteration-count: 3;
+}
 
 .text {
   color: #fdcb46;
   text-shadow: 4px 4px 4px black;
   letter-spacing: 2px;
+}
+.text--contact {
+  text-decoration: none;
 }
 .text__barre--capitales {
   font-size: 70px;
@@ -116,22 +157,31 @@ ul > li {
   margin-bottom: 3vh;
   text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.text__barre--capitales--futur span .fa-circle {
+  font-size: 10px;
+  margin-top: 3px;
+}
+.text__barre--capitales--futur:hover .fa1 {
+  animation: suspension 200ms 100ms;
+  animation-fill-mode: both;
+}
+.text__barre--capitales--futur:hover .fa2 {
+  animation: suspension 400ms 500ms;
+  animation-fill-mode: both;
+}
+.text__barre--capitales--futur:hover .fa3 {
+  animation: suspension 600ms 1000ms;
+  animation-fill-mode: both;
 }
 .text__barre__mentions {
   font-size: 20px;
 }
 .text__barre__contact {
   font-size: 20px;
-}
-
-footer {
-  margin-top: 2vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .face--note {
@@ -185,7 +235,7 @@ footer {
 }
 .face .nom--delice,
 .face .menu--delice {
-  font-family: "Sacramento";
+  font-family: "Monsieur La Doulaise";
 }
 .face .nom--delice {
   background-clip: text;
@@ -212,11 +262,12 @@ footer {
 
 .menu {
   text-align: center;
-  width: 50%;
-  height: 6vh;
+  width: 170px;
+  height: 8vh;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2px;
+  padding-top: 10px;
   border-radius: 50%;
   font-size: 2.5rem;
   cursor: progress;
@@ -236,28 +287,40 @@ footer {
   transition: background-color 2s ease;
 }
 .menu.menu--note:hover {
-  background-color: #f0614e;
+  background-color: white;
 }
 .menu.menu--chic {
   background-color: #fff5fe;
   transition: background-color 2s ease;
 }
 .menu.menu--chic:hover {
-  background-color: #ff5cef;
+  background-color: white;
 }
 .menu.menu--delice {
   background-color: #edefef;
   transition: background-color 2s ease;
 }
 .menu.menu--delice:hover {
-  background-color: #adadad;
+  background-color: white;
 }
 .menu.menu--palette {
   background-color: #fdfffd;
   transition: background-color 2s ease;
 }
 .menu.menu--palette:hover {
-  background-color: #64ff64;
+  background-color: white;
+}
+
+.grossissement {
+  font-size: 2.5rem;
+  opacity: 1;
+}
+.grossissement:hover {
+  transform: scale(1.3);
+  opacity: 0.7;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+  transition-delay: 0.2s;
 }
 
 /* sur indexUn, Deux et suite */
@@ -288,7 +351,7 @@ footer {
 }
 .carte__delice {
   background-color: #edefef;
-  font-family: "Sacramento";
+  font-family: "Monsieur La Doulaise";
   font-size: 1.5rem;
 }
 .carte__palette {
@@ -320,7 +383,7 @@ footer {
   background-image: linear-gradient(45deg, #e7a55a 0 40%, rgba(120, 64, 239, 0.7) 50% 100%);
 }
 .nom--Trois {
-  font-family: "Sacramento";
+  font-family: "Monsieur La Doulaise";
   font-size: 3rem;
   background-clip: text;
   -webkit-background-clip: text;
@@ -367,15 +430,10 @@ footer {
   font-size: 1.8rem;
 }
 
-/*
-
-.dynamique {
-    &:hover {
-
-        animation: ligne 3500ms;
-    }
+.dynamique:hover {
+  animation: ligne 3500ms;
 }
-*/
+
 /* les contenus des plats */
 .platUn {
   display: flex;
@@ -461,8 +519,40 @@ footer {
   padding-left: 240px;
 }
 
-.plat {
-  border: solid 2px red;
+.platQ {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: -50px;
+  padding-top: 0.7rem;
+  padding-top: 0.2rem;
+}
+.platQ .prix {
+  padding-left: 150px;
+}
+
+.platQu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: -50px;
+  padding-top: 0.7rem;
+  padding-top: 0.2rem;
+}
+.platQu .prix {
+  padding-left: 60px;
+}
+
+.platQua {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: -50px;
+  padding-top: 0.7rem;
+  padding-top: 0.2rem;
+}
+.platQua .prix {
+  padding-left: 70px;
 }
 
 #pageUn .dessert__contenu {

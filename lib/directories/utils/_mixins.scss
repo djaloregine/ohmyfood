@@ -21,18 +21,58 @@
 
 }
 
+@mixin propriete-fa-circle {
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+@keyframes suspension {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateX(-9999px);
+    }
+
+    100% {
+
+        transform: translateX(0)
+    }
+}
+
 @mixin propriete__footer {
+    position: relative;
     margin-top: 2vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
 }
+
+@keyframes propriete-tremblement {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX($tremblement);
+
+    }
+
+    75% {
+        transform: translateX($tremblement*-1);
+
+    }
+}
+
 
 @mixin face-resto {
     width: 60%;
     height: 55vh;
-
 }
 
 @mixin face-texte {
@@ -43,13 +83,24 @@
 
 @mixin propriete-menu {
     text-align: center;
-    width: 50%;
-    height: 6vh;
+    width: 170px;
+    height: 8vh;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2px;
+    padding-top: 10px;
     border-radius: 50%;
     font-size: 2.5rem;
+}
+
+/*font-size du menu défini dans les variables*/
+
+@mixin propriete-menu-grossissement {
+    transform: scale(1.3);
+    opacity: 0.7;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+    transition-delay: 0.2s;
 }
 
 /* sur les indexUn, Deux, etc. */
@@ -94,8 +145,6 @@
     flex-direction: column;
     align-items: center;
 }
-
-
 
 @mixin propriété-ligne__statique {
     width: 200px;

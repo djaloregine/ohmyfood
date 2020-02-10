@@ -49,7 +49,15 @@ $background-color : (carte-note: $couleur-carte-note, carte-chic : $couleur-cart
 
 /* VARIABLES DE FONT */
 
-$font-family : (note:"Molle", chic:"Lobster Two", delice: "Sacramento", palette:"Satisfy");
+$font-family : (note:"Molle", chic:"Lobster Two", delice: "Monsieur La Doulaise", palette:"Satisfy");
 
 $font-size : (menu: 2.5rem, categories-menu:3rem, elements-menu:2rem);
 /* pour appeler la variable font-size: map-get($font-size,elementsMenu) */
+
+
+/* VARIABLES POUR ANIMATIONS */
+$tremblement: 2%;
+
+$duree-delai-fa: 100ms;
+$delai-deuxieme-fa: 500ms;
+$delai-troisieme-fa: 1000ms;
