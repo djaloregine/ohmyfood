@@ -337,7 +337,7 @@ footer p {
 }
 
 .titre {
-    @include propriete-titre-catégorie-plat;
+    @include propriete-ligne-catégorie-plat;
 
     .traits {
         @include propriété-ligne__statique;
@@ -345,36 +345,106 @@ footer p {
 
     &__deux {
         grid-gap: 2px;
-
-        .entreeDeux {
-            color: #c77311;
-        }
-
-        .principalDeux {
-            color: #a56799;
-        }
-
-        .dessertDeux {
-            color: #6e4ccc;
-        }
+        margin-top: 7vh;
     }
 
     &__trois {
         display: flex;
         grid-gap: 0px;
 
+
         .dynamique {
             font-size: 1.8rem;
         }
 
     }
+
+    &__quatre {
+        margin-top: 7vh;
+    }
 }
 
 .dynamique {
-    &:hover {
-        animation: ligne 3500ms;
+    @include propriete-intitule-catégorie-plat;
+
+    &__Un {
+        width: 150px;
+
+        &:hover {
+            .ligne__progress {
+                @include propriete-ligne__progress;
+                width: 200px;
+                animation: propriete-ligne__progress 300ms;
+                animation-fill-mode: both;
+
+            }
+        }
+    }
+
+    &__Deux--un {
+        color: #c77311;
+
+        &:hover {
+            .ligne__progress {
+                @include propriete-ligne__progress;
+                background-color: #c77311;
+                ;
+                animation: propriete-ligne__progress 300ms;
+                animation-fill-mode: both;
+            }
+        }
+    }
+
+    &__Deux--deux {
+        color: #a56799;
+
+        &:hover {
+            .ligne__progress {
+                @include propriete-ligne__progress;
+                background-color: #a56799;
+                animation: propriete-ligne__progress 300ms;
+                animation-fill-mode: both;
+            }
+        }
+    }
+
+    &__Deux--trois {
+        color: #6e4ccc;
+
+        &:hover {
+            .ligne__progress {
+                @include propriete-ligne__progress;
+                background-color: #6e4ccc;
+                animation: propriete-ligne__progress 300ms;
+                animation-fill-mode: both;
+            }
+        }
+    }
+
+    &__Trois {
+        &:hover {
+            .ligne__progress {
+                @include propriete-ligne__progress;
+                animation: propriete-ligne__progress 300ms;
+                animation-fill-mode: both;
+
+            }
+        }
+    }
+
+    &__Quatre {
+        &:hover {
+            .ligne__progress {
+                @include propriete-ligne__progress;
+                animation: propriete-ligne__progress 300ms;
+                animation-fill-mode: both;
+
+            }
+        }
     }
 }
+
+
 
 
 /* les contenus des plats */
@@ -444,7 +514,6 @@ footer p {
 
 .platQ {
     @include propriete-li-plat;
-    padding-top: 0.2rem;
 
     .prix {
         padding-left: 150px;
@@ -453,7 +522,6 @@ footer p {
 
 .platQu {
     @include propriete-li-plat;
-    padding-top: 0.2rem;
 
     .prix {
         padding-left: 60px;
@@ -462,14 +530,11 @@ footer p {
 
 .platQua {
     @include propriete-li-plat;
-    padding-top: 0.2rem;
 
     .prix {
         padding-left: 70px;
     }
 }
-
-
 
 
 #pageUn .dessert__contenu {

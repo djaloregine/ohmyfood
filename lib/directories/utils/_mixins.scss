@@ -11,7 +11,6 @@
     background-color: #579c87;
     height: 7vh;
     width: 100%;
-
 }
 
 @mixin texte-titre-site {
@@ -49,6 +48,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+
 }
 
 @keyframes propriete-tremblement {
@@ -130,52 +130,65 @@
 
 }
 
-@mixin propriete-titre-catégorie-plat {
+@mixin propriete-ligne-catégorie-plat {
     margin-top: 5vh;
     margin-bottom: 0.5vh;
+    height: 10px;
     font-size: 1.2rem;
-    display: inline-grid;
-    grid-template-columns: repeat(3, 1.5fr);
-    grid-gap: 50px;
-    text-align: center;
+    display: flex;
+    align-items: center;
 }
+
+@mixin propriete-intitule-catégorie-plat {
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 200px;
+}
+
 
 @mixin propriete-carte-centree {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 5vh;
 }
 
 @mixin propriété-ligne__statique {
     width: 200px;
 }
 
+@mixin propriete-ligne__progress {
+    width: 240px;
+    margin-left: -30px;
+    height: 2px;
+    background-color: black;
+    margin-top: 5px;
 
-@keyframes ligne {
+}
+
+@keyframes propriete-ligne__progress {
     0% {
-        width: 0px;
-        height: 0px;
-        background-color: rgba(#d37410, .1);
+        transform: scaleX(0);
     }
 
-    25% {
-        width: 100px;
-        height: 2px;
-        background-color: rgba(#d37410, .3);
+    40% {
+        transform: scaleX(.5);
     }
 
     75% {
-        width: 150px;
-        height: 4px;
-        background-color: rgba(#d37410, .7);
+        transform: scaleX(.7);
     }
 
     100% {
-        width: 200px;
-        height: 5px;
-        background-color: rgba(#d37410, 1);
+        transform: scaleX(1);
     }
 }
+
+
+
+
+
+
 
 @mixin propriete-li-plat {
     display: flex;

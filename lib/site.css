@@ -37,35 +37,27 @@ span = étendue */
 }
 /*font-size du menu défini dans les variables*/
 /* sur les indexUn, Deux, etc. */
-@keyframes ligne {
+@keyframes propriete-ligne__progress {
   0% {
-    width: 0px;
-    height: 0px;
-    background-color: rgba(211, 116, 16, 0.1);
+    transform: scaleX(0);
   }
-  25% {
-    width: 100px;
-    height: 2px;
-    background-color: rgba(211, 116, 16, 0.3);
+  40% {
+    transform: scaleX(0.5);
   }
   75% {
-    width: 150px;
-    height: 4px;
-    background-color: rgba(211, 116, 16, 0.7);
+    transform: scaleX(0.7);
   }
   100% {
-    width: 200px;
-    height: 5px;
-    background-color: #d37410;
+    transform: scaleX(1);
   }
 }
 /* OC */
-.page,
-.pageUn {
+.page {
   width: 100%;
   height: auto;
   overflow: hidden;
   background-color: #e1e1e7;
+  position: relative;
 }
 
 #section-menus {
@@ -337,6 +329,7 @@ footer p:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 5vh;
 }
 .carte .music {
   text-align: center;
@@ -401,26 +394,17 @@ footer p:hover {
 .titre {
   margin-top: 5vh;
   margin-bottom: 0.5vh;
+  height: 10px;
   font-size: 1.2rem;
-  display: inline-grid;
-  grid-template-columns: repeat(3, 1.5fr);
-  grid-gap: 50px;
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 .titre .traits {
   width: 200px;
 }
 .titre__deux {
   grid-gap: 2px;
-}
-.titre__deux .entreeDeux {
-  color: #c77311;
-}
-.titre__deux .principalDeux {
-  color: #a56799;
-}
-.titre__deux .dessertDeux {
-  color: #6e4ccc;
+  margin-top: 7vh;
 }
 .titre__trois {
   display: flex;
@@ -429,9 +413,84 @@ footer p:hover {
 .titre__trois .dynamique {
   font-size: 1.8rem;
 }
+.titre__quatre {
+  margin-top: 7vh;
+}
 
-.dynamique:hover {
-  animation: ligne 3500ms;
+.dynamique {
+  padding-left: 100px;
+  padding-right: 100px;
+  width: 200px;
+}
+.dynamique__Un {
+  width: 150px;
+}
+.dynamique__Un:hover .ligne__progress {
+  width: 240px;
+  margin-left: -30px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+  width: 200px;
+  animation: propriete-ligne__progress 300ms;
+  animation-fill-mode: both;
+}
+.dynamique__Deux--un {
+  color: #c77311;
+}
+.dynamique__Deux--un:hover .ligne__progress {
+  width: 240px;
+  margin-left: -30px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+  background-color: #c77311;
+  animation: propriete-ligne__progress 300ms;
+  animation-fill-mode: both;
+}
+.dynamique__Deux--deux {
+  color: #a56799;
+}
+.dynamique__Deux--deux:hover .ligne__progress {
+  width: 240px;
+  margin-left: -30px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+  background-color: #a56799;
+  animation: propriete-ligne__progress 300ms;
+  animation-fill-mode: both;
+}
+.dynamique__Deux--trois {
+  color: #6e4ccc;
+}
+.dynamique__Deux--trois:hover .ligne__progress {
+  width: 240px;
+  margin-left: -30px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+  background-color: #6e4ccc;
+  animation: propriete-ligne__progress 300ms;
+  animation-fill-mode: both;
+}
+.dynamique__Trois:hover .ligne__progress {
+  width: 240px;
+  margin-left: -30px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+  animation: propriete-ligne__progress 300ms;
+  animation-fill-mode: both;
+}
+.dynamique__Quatre:hover .ligne__progress {
+  width: 240px;
+  margin-left: -30px;
+  height: 2px;
+  background-color: black;
+  margin-top: 5px;
+  animation: propriete-ligne__progress 300ms;
+  animation-fill-mode: both;
 }
 
 /* les contenus des plats */
@@ -525,7 +584,6 @@ footer p:hover {
   justify-content: space-between;
   margin-left: -50px;
   padding-top: 0.7rem;
-  padding-top: 0.2rem;
 }
 .platQ .prix {
   padding-left: 150px;
@@ -537,7 +595,6 @@ footer p:hover {
   justify-content: space-between;
   margin-left: -50px;
   padding-top: 0.7rem;
-  padding-top: 0.2rem;
 }
 .platQu .prix {
   padding-left: 60px;
@@ -549,7 +606,6 @@ footer p:hover {
   justify-content: space-between;
   margin-left: -50px;
   padding-top: 0.7rem;
-  padding-top: 0.2rem;
 }
 .platQua .prix {
   padding-left: 70px;

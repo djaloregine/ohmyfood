@@ -1,9 +1,9 @@
-.page,
-.pageUn {
+.page {
     width: 100%;
     height: auto;
     overflow: hidden;
     background-color: #e1e1e7;
+    position: relative;
 }
 
 #section-menus {
@@ -35,4 +35,3 @@ ul>li {
     background-image: linear-gradient(90deg, #c949bc, #ebb6e6);
     text-align: center;
 }
-
