@@ -91,10 +91,16 @@ ul > li {
   text-align: center;
 }
 
+.fa-bars {
+  position: absolute;
+  margin-left: 15px;
+}
+
 .barre {
   background-color: #579c87;
   height: 7vh;
   width: 100%;
+  position: relative;
 }
 .barre__heading {
   height: 12vh;
