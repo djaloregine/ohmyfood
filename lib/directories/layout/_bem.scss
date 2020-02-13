@@ -16,20 +16,30 @@
         margin-right: auto;
         border-radius: 20px;
 
+        @media (max-width: 415px) {
+            width: 80%;
+        }
 
+        @media (max-width: px) {
+            width: 80%;
+        }
     }
 
     &__heading--grey {
         background: #bebdc2;
         height: $unit*5;
-
-        
     }
 
     &__footer {
         @include propriete__footer;
 
+        @media (max-width: 415px) {
+            flex-direction: column;
+            height: auto;
+        }
     }
+
+
 }
 
 footer p {
@@ -50,11 +60,16 @@ footer p {
 
     &__barre--capitales {
         font-size: $unit*7;
+
+        @media (max-width: 415px) {
+            font-size: $unit*3;
+            margin-left: 50px;
+        }
     }
 
     &__barre--capitales--futur {
         font-size: $unit*2.5;
-        margin-bottom: 3vh;
+        /*margin-bottom: 3vh;*/
         text-align: center;
         display: flex;
         flex-direction: row;
@@ -63,14 +78,22 @@ footer p {
 
         span .fa-circle {
             @include propriete-fa-circle;
+
         }
 
         &:hover {
 
-            .fa1 {
+            @for $i from 1 through 3 {
+                .fa#{$i} {
+                    visibility: visible;
+                    animation: suspension #{200*$i}ms #{200*$i}ms;
+                    animation-fill-mode: both;
+                }
+            }
 
-                animation: suspension 200ms $duree-delai-fa;
-                animation-fill-mode: both;
+            /*    .fa1 {
+
+                
             }
 
             .fa2 {
@@ -83,19 +106,31 @@ footer p {
                 animation: suspension 600ms $delai-troisieme-fa;
                 animation-fill-mode: both;
 
-            }
+            }*/
         }
 
+        @media (max-width: 768px) {
+            font-size: $unit*1.5;
+        }
 
     }
 
     &__barre__mentions {
         font-size: $unit*2;
+
+        @media (max-width: 415px) {
+            font-size: $unit*1;
+        }
     }
 
     &__barre__contact {
         font-size: $unit*2;
+
+        @media (max-width: 415px) {
+            font-size: $unit*1;
+        }
     }
+
 }
 
 
@@ -125,22 +160,48 @@ footer p {
 .face {
     @include face-resto;
 
+    @media (max-width: 415px) {
+        width: 90%;
+        height: 50vh;
+    }
+
+    @media (min-width: 415px) and (max-width: 1024px) {
+        width: 75%;
+        height: 50vh;
+    }
+
     .face--text {
         @include face-texte;
 
+        @media (max-width: 415px) {
+            font-size: 2rem;
+            margin-top: 10vh;
+        }
+
         &--note {
             margin-top: 15vh;
+
+            @media (max-width: 415px) {
+                margin-top: 2vh;
+            }
         }
     }
 
     .menu-note {
         margin-top: 3vh;
 
+        @media (max-width: 415px) {
+            margin-top: 1vh;
+        }
     }
 
     .nom--note,
     .menu--note {
         font-family: map-get($font-family, note);
+
+        @media (max-width: 415px) {
+            font-size: 2rem;
+        }
     }
 
     .nom--note {
@@ -197,6 +258,10 @@ footer p {
     @include propriete-menu;
     cursor: progress;
 
+    @media (max-width: 415px) {
+        font-size: 0.5rem;
+    }
+
     &:hover {
         cursor: pointer;
 
@@ -216,6 +281,7 @@ footer p {
         background-color: #fcdfdb;
         transition: background-color 2s ease;
 
+
         &:hover {
             background-color: lighten(#fcdfdb, 30);
 
@@ -226,6 +292,7 @@ footer p {
     &.menu--chic {
         background-color: #fff5fe;
         transition: background-color 2s ease;
+
 
         &:hover {
             background-color: lighten(#fff5fe, 30);
@@ -246,6 +313,7 @@ footer p {
         background-color: #fdfffd;
         transition: background-color 2s ease;
 
+
         &:hover {
             background-color: lighten(#fdfffd, 30);
         }
@@ -255,6 +323,10 @@ footer p {
 .grossissement {
     font-size: map-get($font-size, menu);
     opacity: 1;
+
+    @media (max-width: 415px) {
+        font-size: 2rem;
+    }
 
     &:hover {
         @include propriete-menu-grossissement;
@@ -266,6 +338,10 @@ footer p {
 
 .carte {
     @include propriete-carte;
+
+    @media (max-width: 415px) {
+        width: 100%;
+    }
 
     &__centree {
         @include propriete-carte-centree;
@@ -338,6 +414,10 @@ footer p {
 
     .traits {
         @include propriété-ligne__statique;
+
+        @media (max-width: 415px) {
+            visibility: hidden;
+        }
     }
 
     &__deux {
@@ -480,11 +560,19 @@ footer p {
     @include propriete-li-plat;
     margin-left: -270px;
     color: rgba(110, 76, 204, 0.7);
+
+    @media (max-width: 415px) {
+        margin-left: -160px;
+    }
 }
 
 .platT {
     @include propriete-li-plat;
     padding-top: 0.2rem;
+
+    @media (max-width: 415px) {
+        margin-right: 30px;
+    }
 
     .prix {
         padding-left: 90px;
@@ -495,6 +583,10 @@ footer p {
     @include propriete-li-plat;
     padding-top: 0.2rem;
 
+    @media (max-width: 415px) {
+        margin-right: 30px;
+    }
+
     .prix {
         padding-left: 80px;
     }
@@ -504,8 +596,16 @@ footer p {
     @include propriete-li-plat;
     padding-top: 0.2rem;
 
+    @media (max-width: 415px) {
+        margin-right: 30px;
+    }
+
     .prix {
-        padding-left: 240px;
+        padding-left: 260px;
+
+        @media (max-width: 415px) {
+            padding-left: 100px;
+        }
     }
 }
 

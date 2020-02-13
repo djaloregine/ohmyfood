@@ -18,12 +18,12 @@
     color: $jaune-dore;
     text-shadow: $unit*0.4 $unit*0.4 $unit*0.4 black;
     letter-spacing: 2px;
-
 }
 
 @mixin propriete-fa-circle {
     font-size: 10px;
     margin-top: 3px;
+    visibility: hidden;
 }
 
 @keyframes suspension {
@@ -42,7 +42,7 @@
 }
 
 @mixin propriete__footer {
-    position: relative;
+    position: fixed;
     margin-top: 2vh;
     display: flex;
     flex-direction: row;
@@ -74,6 +74,7 @@
 @mixin face-resto {
     width: 60%;
     height: 55vh;
+
 }
 
 @mixin face-texte {
@@ -92,6 +93,12 @@
     padding-top: 10px;
     border-radius: 50%;
     font-size: 2.5rem;
+
+    @media (max-width: 768px) {
+        width: 110px;
+        height: 5vh;
+    }
+
 }
 
 /*font-size du menu défini dans les variables*/
@@ -114,6 +121,11 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+
+    @media (max-width: 415px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 
 @mixin propriete-text-resto-neutre {
@@ -185,12 +197,6 @@
     }
 }
 
-
-
-
-
-
-
 @mixin propriete-li-plat {
     display: flex;
     flex-direction: row;
@@ -200,56 +206,8 @@
 }
 
 
-
-
-
-
-
-
 @mixin degrade-texte {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
 }
-
-
-
-
-
-
-
-
-
-
-@mixin propriete-ligne__dynamique {
-    height: 5px;
-    background-color: #ef0d6c;
-    padding-top: 5px;
-    visibility: hidden;
-}
-
-
-
-
-
-
-
-
-
-@mixin propriete-plat {
-    margin-top: 5px;
-}
-
-
-@mixin mobile-only {
-    @media screen and (max-width: map-get($breakpoints, mobile)) {
-        @content;
-    }
-}
-
-
-
-
-
-
-/* OC */
