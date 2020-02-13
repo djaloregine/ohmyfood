@@ -83,6 +83,11 @@ ul > li {
   border-radius: 50%;
 }
 
+.fa-search {
+  padding-top: 10px;
+  margin-left: 15px;
+}
+
 .fa-music {
   background-clip: text;
   -webkit-background-clip: text;
@@ -119,10 +124,6 @@ ul > li {
 .barre__heading--grey {
   background: #bebdc2;
   height: 50px;
-}
-.barre__heading--grey.fa-search {
-  margin-left: -92%;
-  padding-top: 5px;
 }
 .barre__footer {
   position: relative;

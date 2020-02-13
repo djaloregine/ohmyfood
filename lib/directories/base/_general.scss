@@ -30,6 +30,11 @@ ul>li {
 
 }
 
+.fa-search {
+    padding-top: 10px;
+    margin-left: 15px;
+}
+
 .fa-music {
     @include degrade-texte;
     background-image: linear-gradient(90deg, #c949bc, #ebb6e6);
