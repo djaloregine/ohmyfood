@@ -7,6 +7,16 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+
+        a {
+            position: absolute;
+            top: 3vh;
+            color: black;
+
+            &:hover {
+                color: white;
+            }
+        }
     }
 
     &__futur {
@@ -15,6 +25,7 @@
         margin-left: auto;
         margin-right: auto;
         border-radius: 20px;
+        margin-bottom: 10vh;
 
         @media (max-width: 415px) {
             width: 80%;
@@ -32,10 +43,12 @@
 
     &__footer {
         @include propriete__footer;
+        
 
         @media (max-width: 415px) {
             flex-direction: column;
             height: auto;
+            top: 88%;
         }
     }
 
@@ -90,23 +103,6 @@ footer p {
                     animation-fill-mode: both;
                 }
             }
-
-            /*    .fa1 {
-
-                
-            }
-
-            .fa2 {
-
-                animation: suspension 400ms $delai-deuxieme-fa;
-                animation-fill-mode: both;
-            }
-
-            .fa3 {
-                animation: suspension 600ms $delai-troisieme-fa;
-                animation-fill-mode: both;
-
-            }*/
         }
 
         @media (max-width: 768px) {

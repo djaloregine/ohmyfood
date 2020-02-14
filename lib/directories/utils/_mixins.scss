@@ -11,7 +11,7 @@
     background-color: #579c87;
     height: 7vh;
     width: 100%;
-    position: relative;
+
 }
 
 @mixin texte-titre-site {
@@ -49,6 +49,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    top: 90%;
 
 }
 
@@ -114,7 +115,7 @@
 /* sur les indexUn, Deux, etc. */
 
 @mixin propriete-carte {
-    height: 900px;
+    height: auto;
     list-style-type: none;
     margin-top: 3vh;
     padding-top: 2vh;
