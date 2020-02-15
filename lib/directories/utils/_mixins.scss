@@ -41,16 +41,16 @@
     }
 }
 
+
 @mixin propriete__footer {
-    position: fixed;
     margin-top: 2vh;
+    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    top: 90%;
-
+    bottom: 0%;
 }
 
 @keyframes propriete-tremblement {
@@ -116,7 +116,6 @@
 
 @mixin propriete-carte {
     height: auto;
-    list-style-type: none;
     margin-top: 3vh;
     padding-top: 2vh;
     width: 60%;
@@ -157,6 +156,12 @@
     padding-left: 100px;
     padding-right: 100px;
     width: 200px;
+
+    @media (min-width: 416px) and (max-width: 1024px) {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
 }
 
 
@@ -169,6 +174,14 @@
 
 @mixin propriété-ligne__statique {
     width: 200px;
+
+    @media (max-width: 415px) {
+        visibility: hidden;
+    }
+
+    @media (min-width: 416px) and (max-width: 768px) {
+        width: 100px;
+    }
 }
 
 @mixin propriete-ligne__progress {
@@ -204,6 +217,7 @@
     justify-content: space-between;
     margin-left: -50px;
     padding-top: 0.7rem;
+    list-style-type: none;
 }
 
 

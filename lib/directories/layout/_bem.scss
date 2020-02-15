@@ -28,7 +28,7 @@
         margin-bottom: 10vh;
 
         @media (max-width: 415px) {
-            width: 80%;
+            width: 70%;
         }
 
         @media (max-width: px) {
@@ -43,16 +43,17 @@
 
     &__footer {
         @include propriete__footer;
-        
+
+        a {
+            text-decoration: none;
+        }
 
         @media (max-width: 415px) {
             flex-direction: column;
             height: auto;
-            top: 88%;
+            top: 90%;
         }
     }
-
-
 }
 
 footer p {
@@ -61,8 +62,6 @@ footer p {
         animation-iteration-count: 3;
     }
 }
-
-
 
 .text {
     @include texte-titre-site;
@@ -113,6 +112,8 @@ footer p {
 
     &__barre__mentions {
         font-size: $unit*2;
+
+
 
         @media (max-width: 415px) {
             font-size: $unit*1;
@@ -316,16 +317,19 @@ footer p {
     }
 }
 
-.grossissement {
-    font-size: map-get($font-size, menu);
-    opacity: 1;
+.menu {
+    .grossissement {
+        font-size: map-get($font-size, menu);
+        opacity: 1;
 
-    @media (max-width: 415px) {
-        font-size: 2rem;
+        @media (max-width: 415px) {
+            font-size: 2rem;
+        }
     }
 
     &:hover {
         @include propriete-menu-grossissement;
+
     }
 }
 
@@ -411,9 +415,6 @@ footer p {
     .traits {
         @include propriété-ligne__statique;
 
-        @media (max-width: 415px) {
-            visibility: hidden;
-        }
     }
 
     &__deux {
@@ -521,6 +522,8 @@ footer p {
 
 
 /* les contenus des plats */
+
+
 
 .platUn {
     @include propriete-li-plat;
