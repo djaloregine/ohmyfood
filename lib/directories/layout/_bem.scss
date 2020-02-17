@@ -31,9 +31,7 @@
             width: 70%;
         }
 
-        @media (max-width: px) {
-            width: 80%;
-        }
+
     }
 
     &__heading--grey {
@@ -41,18 +39,20 @@
         height: $unit*5;
     }
 
-    &__footer {
-        @include propriete__footer;
 
-        a {
-            text-decoration: none;
-        }
+}
 
-        @media (max-width: 415px) {
-            flex-direction: column;
-            height: auto;
-            top: 90%;
-        }
+.barre__footer {
+    @include propriete__footer;
+
+    a {
+        text-decoration: none;
+    }
+
+    @media (max-width: 415px) {
+        flex-direction: column;
+        height: auto;
+
     }
 }
 
@@ -157,29 +157,29 @@ footer p {
 .face {
     @include face-resto;
 
-    @media (max-width: 415px) {
-        width: 90%;
-        height: 50vh;
-    }
 
-    @media (min-width: 415px) and (max-width: 1024px) {
-        width: 75%;
+    @media (max-width: 415px) {
+        width: 95%;
         height: 50vh;
     }
 
     .face--text {
         @include face-texte;
 
-        @media (max-width: 415px) {
-            font-size: 2rem;
-            margin-top: 10vh;
+        &:hover {
+            @include propriete-grossissement;
         }
+
 
         &--note {
             margin-top: 15vh;
 
             @media (max-width: 415px) {
                 margin-top: 2vh;
+            }
+
+            @media (min-width: 768px) and (max-width: 1024px) {
+                margin-top: 30px;
             }
         }
     }
@@ -203,7 +203,7 @@ footer p {
 
     .nom--note {
         margin-top: 2px;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .nom--chic,
@@ -228,6 +228,10 @@ footer p {
     .nom--delice {
         @include degrade-texte;
         background-image: linear-gradient(90deg, rgba(51, 92, 240, 1), rgba(179, 205, 228, 0.5));
+
+        @media (max-width: 1024px) {
+            font-size: smaller;
+        }
     }
 
     .menu--delice {
@@ -242,6 +246,10 @@ footer p {
     .nom--palette {
         @include degrade-texte;
         background-image: linear-gradient(180deg, rgba(38, 94, 31, 1), rgba(187, 255, 119, 0.5));
+
+        @media (max-width: 1024px) {
+            font-size: smaller;
+        }
     }
 
     .menu--palette {
@@ -255,8 +263,9 @@ footer p {
     @include propriete-menu;
     cursor: progress;
 
+
     @media (max-width: 415px) {
-        font-size: 0.5rem;
+        font-size: 1.5rem;
     }
 
     &:hover {
@@ -327,10 +336,6 @@ footer p {
         }
     }
 
-    &:hover {
-        @include propriete-menu-grossissement;
-
-    }
 }
 
 
@@ -338,10 +343,6 @@ footer p {
 
 .carte {
     @include propriete-carte;
-
-    @media (max-width: 415px) {
-        width: 100%;
-    }
 
     &__centree {
         @include propriete-carte-centree;
@@ -386,6 +387,18 @@ footer p {
 
     &--Un {
         font-family: map-get($font-family, note);
+
+        @media (max-width: 415px) {
+            margin-right: 20px;
+        }
+
+        &__bas {
+            padding-bottom: 20px;
+
+            @media (max-width: 415px) {
+                margin-left: -50px;
+            }
+        }
     }
 
     &--Deux {
@@ -423,9 +436,7 @@ footer p {
     }
 
     &__trois {
-        display: flex;
         grid-gap: 0px;
-
 
         .dynamique {
             font-size: 1.8rem;
@@ -458,6 +469,10 @@ footer p {
     &__Deux--un {
         color: #c77311;
 
+        @media (max-width: 415px) {
+            margin-right: 50px;
+        }
+
         &:hover {
             .ligne__progress {
                 @include propriete-ligne__progress;
@@ -472,6 +487,10 @@ footer p {
     &__Deux--deux {
         color: #a56799;
 
+        @media (max-width: 415px) {
+            margin-right: 50px;
+        }
+
         &:hover {
             .ligne__progress {
                 @include propriete-ligne__progress;
@@ -484,6 +503,10 @@ footer p {
 
     &__Deux--trois {
         color: #6e4ccc;
+
+        @media (max-width: 415px) {
+            margin-right: 50px;
+        }
 
         &:hover {
             .ligne__progress {
@@ -524,7 +547,6 @@ footer p {
 /* les contenus des plats */
 
 
-
 .platUn {
     @include propriete-li-plat;
     margin-right: 50px;
@@ -534,36 +556,43 @@ footer p {
     }
 }
 
-.platD {
-    @include propriete-li-plat;
-    margin-right: 40px;
-
-    color: rgba(198, 116, 18, .5);
-
-    .prix {
-        padding-left: 200px;
-    }
-}
 
 .platDe {
     @include propriete-li-plat;
     margin-right: 50px;
     color: rgba(165, 103, 153, 0.7);
 
+    @media (min-width: 321px) and (max-width: 415px) {
+        margin-right: 20px;
+    }
+
     .prix {
         padding-left: 100px;
     }
-}
 
-.platDeu {
-    @include propriete-li-plat;
-    margin-left: -270px;
-    color: rgba(110, 76, 204, 0.7);
+    &__D {
+        color: #d37410;
 
-    @media (max-width: 415px) {
-        margin-left: -160px;
+        .prix {
+            padding-left: 210px;
+
+            @media (max-width: 415px) {
+                padding-left: 100px;
+            }
+        }
+    }
+
+    &__Deu {
+        color: #6e4ccc;
+        margin-right: 270px;
+        ;
+
+        @media (min-width: 321px) and (max-width: 415px) {
+            margin-right: 70px;
+        }
     }
 }
+
 
 .platT {
     @include propriete-li-plat;
@@ -600,7 +629,7 @@ footer p {
     }
 
     .prix {
-        padding-left: 260px;
+        padding-left: 220px;
 
         @media (max-width: 415px) {
             padding-left: 100px;
@@ -608,11 +637,16 @@ footer p {
     }
 }
 
+
 .platQ {
     @include propriete-li-plat;
 
     .prix {
         padding-left: 150px;
+
+        @media (max-width: 415px) {
+            padding-left: 10px;
+        }
     }
 }
 
@@ -621,6 +655,10 @@ footer p {
 
     .prix {
         padding-left: 60px;
+
+        @media (max-width: 415px) {
+            padding-left: 10px;
+        }
     }
 }
 
@@ -629,9 +667,25 @@ footer p {
 
     .prix {
         padding-left: 70px;
+
+        @media (max-width: 415px) {
+            padding-left: 10px;
+        }
     }
 }
 
+.entrée--contenu--deux {
+    margin-left: -40px;
+}
+
+.plat--contenu--quatre,
+.dessert--contenu--quatre,
+.entrée--contenu--quatre {
+    @media (max-width: 415px) {
+        margin-left: 50px;
+        margin-right: 60px;
+    }
+}
 
 #pageUn .dessert__contenu {
     margin-right: 80px;
