@@ -73,7 +73,7 @@ footer p {
     &__barre--capitales {
         font-size: $unit*7;
 
-        @media (max-width: 415px) {
+        @media (max-width: 767px) {
             font-size: $unit*3;
             margin-left: 50px;
         }
@@ -104,7 +104,7 @@ footer p {
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             font-size: $unit*1.5;
         }
 
@@ -115,7 +115,7 @@ footer p {
 
 
 
-        @media (max-width: 415px) {
+        @media (max-width: 767px) {
             font-size: $unit*1;
         }
     }
@@ -123,7 +123,7 @@ footer p {
     &__barre__contact {
         font-size: $unit*2;
 
-        @media (max-width: 415px) {
+        @media (max-width: 767px) {
             font-size: $unit*1;
         }
     }
@@ -131,212 +131,61 @@ footer p {
 }
 
 
-.face {
+#section-menus {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-start: 2;
+    grid-auto-flow: row;
+    grid-gap: 10px;
+    margin-top: 50px;
+    margin-left: 15%;
 
-
-    &--note {
-        background-color: map-get($background-color, carte-note);
-
-    }
-
-    &--chic {
-        background-color: map-get($background-color, carte-chic);
-
-    }
-
-    &--delice {
-        background-color: map-get($background-color, carte-delice);
-
-    }
-
-    &--palette {
-        background-color: map-get($background-color, carte-palette);
-    }
-}
-
-.face {
-    @include face-resto;
-
-
-    @media (max-width: 415px) {
-        width: 95%;
-        height: 50vh;
-    }
-
-    .face--text {
-        @include face-texte;
-
-        &:hover {
-            @include propriete-grossissement;
-        }
-
+    .face {
+        @include propriete-face;
 
         &--note {
-            margin-top: 15vh;
+            background-color: #fcdfdb;
+        }
 
-            @media (max-width: 415px) {
-                margin-top: 2vh;
-            }
+        &--chic {
+            background-color: #fff5fe;
+        }
 
-            @media (min-width: 768px) and (max-width: 1024px) {
-                margin-top: 30px;
-            }
+        &--delice {
+            background-color: #f9f9f9;
+        }
+
+        &--palette {
+            background-color: #fdfffd;
         }
     }
-
-    .menu-note {
-        margin-top: 3vh;
-
-        @media (max-width: 415px) {
-            margin-top: 1vh;
-        }
-    }
-
-    .nom--note,
-    .menu--note {
-        font-family: map-get($font-family, note);
-
-        @media (max-width: 415px) {
-            font-size: 2rem;
-        }
-    }
-
-    .nom--note {
-        margin-top: 2px;
-        font-size: 2.5rem;
-    }
-
-    .nom--chic,
-    .menu--chic {
-        font-family: map-get($font-family, chic);
-    }
-
-    .nom--chic {
-        @include degrade-texte;
-        background-image: linear-gradient(45deg, rgb(231, 165, 90) 0 40%, rgba(120, 64, 239, 0.7) 50% 100%);
-    }
-
-    .menu--chic {
-        color: rgb(231, 165, 90);
-    }
-
-    .nom--delice,
-    .menu--delice {
-        font-family: map-get($font-family, delice);
-    }
-
-    .nom--delice {
-        @include degrade-texte;
-        background-image: linear-gradient(90deg, rgba(51, 92, 240, 1), rgba(179, 205, 228, 0.5));
-
-        @media (max-width: 1024px) {
-            font-size: smaller;
-        }
-    }
-
-    .menu--delice {
-        color: rgb(51, 92, 240, 1);
-    }
-
-    .nom--palette,
-    .menu-palette {
-        font-family: map-get($font-family, palette);
-    }
-
-    .nom--palette {
-        @include degrade-texte;
-        background-image: linear-gradient(180deg, rgba(38, 94, 31, 1), rgba(187, 255, 119, 0.5));
-
-        @media (max-width: 1024px) {
-            font-size: smaller;
-        }
-    }
-
-    .menu--palette {
-        color: rgba(38, 94, 31);
-    }
-}
-
-
-.menu {
-    font-size: map-get($font-size, itemMenu);
-    @include propriete-menu;
-    cursor: progress;
-
 
     @media (max-width: 415px) {
-        font-size: 1.5rem;
+        grid-template-columns: 1fr;
+        margin-left: 20px;
     }
+
+    @media (min-width: 416px)and (max-width: 779px) {
+        grid-template-columns: 1fr;
+        margin-left: auto;
+    }
+
+    @media (min-width: 780px) and (max-width: 950px) {
+        margin-left: 7%;
+    }
+}
+
+
+.zoom {
+    @include propriete-image;
 
     &:hover {
-        cursor: pointer;
-
-    }
-
-    a:link {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    a:visited {
-        color: inherit;
-
-    }
-
-    &.menu--note {
-        background-color: #fcdfdb;
-        transition: background-color 2s ease;
-
-
-        &:hover {
-            background-color: lighten(#fcdfdb, 30);
-
-        }
-
-    }
-
-    &.menu--chic {
-        background-color: #fff5fe;
-        transition: background-color 2s ease;
-
-
-        &:hover {
-            background-color: lighten(#fff5fe, 30);
-        }
-    }
-
-    &.menu--delice {
-        background-color: #edefef;
-        transition: background-color 2s ease;
-
-        &:hover {
-            background-color: lighten(#f9f9f9, 30);
-
-        }
-    }
-
-    &.menu--palette {
-        background-color: #fdfffd;
-        transition: background-color 2s ease;
-
-
-        &:hover {
-            background-color: lighten(#fdfffd, 30);
-        }
+        @include propriete-grossissement;
     }
 }
 
-.menu {
-    .grossissement {
-        font-size: map-get($font-size, menu);
-        opacity: 1;
 
-        @media (max-width: 415px) {
-            font-size: 2rem;
-        }
-    }
-
-}
 
 
 /* sur indexUn, Deux et suite */
@@ -396,7 +245,7 @@ footer p {
             padding-bottom: 20px;
 
             @media (max-width: 415px) {
-                margin-left: -50px;
+                margin-left: -30px;
             }
         }
     }
@@ -441,7 +290,6 @@ footer p {
         .dynamique {
             font-size: 1.8rem;
         }
-
     }
 
     &__quatre {
@@ -452,34 +300,25 @@ footer p {
 .dynamique {
     @include propriete-intitule-catégorie-plat;
 
-    &__Un {
-        width: 150px;
+    .ligne {
+        @include propriete-ligne-contenant-ligne-progress;
 
-        &:hover {
-            .ligne__progress {
-                @include propriete-ligne__progress;
-                width: 200px;
-                animation: propriete-ligne__progress 300ms;
-                animation-fill-mode: both;
+    }
 
-            }
+    &:hover {
+        .ligne__progress {
+            @include propriete-ligne__progress;
+            animation: propriete-ligne__progress 300ms;
+            animation-fill-mode: both;
         }
     }
 
     &__Deux--un {
-        color: #c77311;
-
-        @media (max-width: 415px) {
-            margin-right: 50px;
-        }
+        color: #c67412;
 
         &:hover {
             .ligne__progress {
-                @include propriete-ligne__progress;
-                background-color: #c77311;
-                ;
-                animation: propriete-ligne__progress 300ms;
-                animation-fill-mode: both;
+                background-color: #c67412;
             }
         }
     }
@@ -487,16 +326,9 @@ footer p {
     &__Deux--deux {
         color: #a56799;
 
-        @media (max-width: 415px) {
-            margin-right: 50px;
-        }
-
         &:hover {
             .ligne__progress {
-                @include propriete-ligne__progress;
                 background-color: #a56799;
-                animation: propriete-ligne__progress 300ms;
-                animation-fill-mode: both;
             }
         }
     }
@@ -504,41 +336,42 @@ footer p {
     &__Deux--trois {
         color: #6e4ccc;
 
-        @media (max-width: 415px) {
-            margin-right: 50px;
-        }
-
         &:hover {
             .ligne__progress {
-                @include propriete-ligne__progress;
                 background-color: #6e4ccc;
-                animation: propriete-ligne__progress 300ms;
-                animation-fill-mode: both;
             }
         }
     }
 
-    &__Trois {
+    &__Trois--un {
+        width: 200px;
+
         &:hover {
             .ligne__progress {
-                @include propriete-ligne__progress;
-                animation: propriete-ligne__progress 300ms;
-                animation-fill-mode: both;
-
+                background-color: rgba(51, 92, 240, 1);
             }
         }
     }
 
-    &__Quatre {
+    &__Trois--deux {
+
+
         &:hover {
             .ligne__progress {
-                @include propriete-ligne__progress;
-                animation: propriete-ligne__progress 300ms;
-                animation-fill-mode: both;
-
+                background-color: #5070e8;
             }
         }
     }
+
+    &__Trois--trois {
+
+        &:hover {
+            .ligne__progress {
+                background-color: #339dfa;
+            }
+        }
+    }
+
 }
 
 
@@ -573,10 +406,10 @@ footer p {
     &__D {
         color: #d37410;
 
-        .prix {
+        &.prix {
             padding-left: 210px;
 
-            @media (max-width: 415px) {
+            @media (max-width: 530px) {
                 padding-left: 100px;
             }
         }
@@ -587,7 +420,7 @@ footer p {
         margin-right: 270px;
         ;
 
-        @media (min-width: 321px) and (max-width: 415px) {
+        @media (min-width: 321px) and (max-width: 550px) {
             margin-right: 70px;
         }
     }
@@ -631,8 +464,8 @@ footer p {
     .prix {
         padding-left: 220px;
 
-        @media (max-width: 415px) {
-            padding-left: 100px;
+        @media (max-width: 768px) {
+            padding-left: 70px;
         }
     }
 }
