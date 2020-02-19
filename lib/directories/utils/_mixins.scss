@@ -73,10 +73,26 @@
     }
 }
 
+//menus sur INDEX
+
+@mixin propriete-section-menus {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-start: 2;
+    grid-auto-flow: row;
+    grid-gap: 10px;
+    margin-top: 50px;
+    margin-left: 10%;
+}
+
+
+
 @mixin propriete-face {
     width: 335px;
     height: 475px;
-
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @mixin propriete-image {
@@ -95,6 +111,8 @@
     transition-timing-function: ease-in;
     transition-delay: 0.2s;
 }
+
+
 
 /* sur les indexUn, Deux, etc. */
 
