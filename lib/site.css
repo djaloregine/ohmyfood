@@ -239,6 +239,21 @@ footer p:hover {
   margin-left: auto;
   margin-right: auto;
 }
+#section-menus .face .zoom {
+  width: 260px;
+  height: 380px;
+  display: flex;
+  margin: auto;
+  margin-top: 12%;
+  opacity: 0.6;
+}
+#section-menus .face .zoom:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
+  transition-delay: 0.2s;
+}
 #section-menus .face--note {
   background-color: #fcdfdb;
 }
@@ -251,34 +266,20 @@ footer p:hover {
 #section-menus .face--palette {
   background-color: #fdfffd;
 }
-@media (max-width: 415px) {
+@media (min-width: 319px) and (max-width: 415px) {
   #section-menus {
     grid-template-columns: 1fr;
-    margin-left: 20px;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
-@media (min-width: 416px) and (max-width: 800px) {
+@media (min-width: 416px) and (max-width: 856px) {
   #section-menus {
     grid-template-columns: 1fr;
     margin-left: auto;
     margin-right: auto;
   }
-}
-
-.zoom {
-  width: 260px;
-  height: 380px;
-  display: flex;
-  margin: auto;
-  margin-top: 12%;
-  opacity: 0.6;
-}
-.zoom:hover {
-  transform: scale(1.2);
-  opacity: 1;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-in;
-  transition-delay: 0.2s;
 }
 
 /* sur indexUn, Deux et suite */
