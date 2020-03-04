@@ -26,9 +26,11 @@
         margin-right: auto;
         border-radius: 20px;
         margin-bottom: 10vh;
+        padding-top: 20px;
 
-        @media (max-width: 415px) {
-            width: 70%;
+        @media (min-width: 320px) and (max-width: 530px) {
+            height: 5vh;
+            width: 60%;
         }
 
 
@@ -81,12 +83,9 @@ footer p {
 
     &__barre--capitales--futur {
         font-size: $unit*2.5;
-        /*margin-bottom: 3vh;*/
-        text-align: center;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        align-items: center;
 
         span .fa-circle {
             @include propriete-fa-circle;
@@ -106,14 +105,12 @@ footer p {
 
         @media (max-width: 767px) {
             font-size: $unit*1.5;
-        }
 
+        }
     }
 
     &__barre__mentions {
         font-size: $unit*2;
-
-
 
         @media (max-width: 767px) {
             font-size: $unit*1;

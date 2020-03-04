@@ -117,10 +117,12 @@ ul > li {
   margin-right: auto;
   border-radius: 20px;
   margin-bottom: 10vh;
+  padding-top: 20px;
 }
-@media (max-width: 415px) {
+@media (min-width: 320px) and (max-width: 530px) {
   .barre__futur {
-    width: 70%;
+    height: 5vh;
+    width: 60%;
   }
 }
 .barre__heading--grey {
@@ -174,12 +176,9 @@ footer p:hover {
 }
 .text__barre--capitales--futur {
   font-size: 25px;
-  /*margin-bottom: 3vh;*/
-  text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: center;
 }
 .text__barre--capitales--futur span .fa-circle {
   font-size: 10px;
