@@ -32,16 +32,12 @@
             height: 5vh;
             width: 60%;
         }
-
-
     }
 
     &__heading--grey {
         background: #bebdc2;
         height: $unit*5;
     }
-
-
 }
 
 .barre__footer {
@@ -54,7 +50,6 @@
     @media (max-width: 415px) {
         flex-direction: column;
         height: auto;
-
     }
 }
 
@@ -93,7 +88,6 @@ footer p {
         }
 
         &:hover {
-
             @for $i from 1 through 3 {
                 .fa#{$i} {
                     visibility: visible;
@@ -246,22 +240,27 @@ footer p {
 
     &--Deux {
         font-family: map-get($font-family, chic);
-        @include degrade-texte;
-        background-image: linear-gradient(45deg, rgb(231, 165, 90) 0 40%, rgba(120, 64, 239, 0.7) 50% 100%);
+        color: #d17122;
+        background: linear-gradient(-90deg, #d17122 10%, #a6669a 60%, #6b30eb 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     &--Trois {
         font-family: map-get($font-family, delice);
         font-size: 3rem;
-        @include degrade-texte;
-        background-image: linear-gradient(90deg, rgba(51, 92, 240, 1), rgba(179, 205, 228, 0.5));
-
+        color: rgba(51, 92, 240, 1);
+        background: linear-gradient(90deg, rgba(51, 92, 240, 1), rgba(179, 205, 228, 0.5));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     &--Quatre {
         font-family: map-get($font-family, palette);
-        @include degrade-texte;
-        background-image: linear-gradient(180deg, rgba(38, 94, 31, 1), rgba(187, 255, 119, 0.5));
+        color: rgba(38, 94, 31, 1);
+        background: linear-gradient(-45deg, rgba(38, 94, 31, 0.7), rgba(187, 255, 119, 0.3));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }
 
@@ -296,7 +295,6 @@ footer p {
 
     .ligne {
         @include propriete-ligne-contenant-ligne-progress;
-
     }
 
     &:hover {

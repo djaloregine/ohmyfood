@@ -9,9 +9,7 @@ body {
     overflow: hidden;
     background-color: #e1e1e7;
     position: relative;
-
 }
-
 
 ul>li {
     list-style: none;
@@ -22,22 +20,26 @@ ul>li {
     width: 70px;
     height: 35px;
     border-radius: 50%;
-
 }
 
 .fa-search {
     padding-top: 10px;
     margin-left: 15px;
-
 }
 
 .fa-music {
-    @include degrade-texte;
-    background-image: linear-gradient(90deg, #c949bc, #ebb6e6);
+    color: #c949bc;
+    background: linear-gradient(90deg, #c949bc, #ebb6e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
 }
 
 .fa-bars {
     position: absolute;
     margin-left: 15px;
+}
+
+.pageMentions {
+    padding-left: 15px;
 }

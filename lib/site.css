@@ -48,6 +48,12 @@
     transform: scaleX(1);
   }
 }
+/*
+@mixin degrade-texte {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}*/
 body {
   margin: 0px;
   padding: 0px;
@@ -78,16 +84,20 @@ ul > li {
 }
 
 .fa-music {
-  background-clip: text;
+  color: #c949bc;
+  background: linear-gradient(90deg, #c949bc, #ebb6e6);
   -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(90deg, #c949bc, #ebb6e6);
+  -webkit-text-fill-color: transparent;
   text-align: center;
 }
 
 .fa-bars {
   position: absolute;
   margin-left: 15px;
+}
+
+.pageMentions {
+  padding-left: 15px;
 }
 
 .barre {
@@ -367,25 +377,25 @@ footer p:hover {
 }
 .nom--Deux {
   font-family: "Lobster Two";
-  background-clip: text;
+  color: #d17122;
+  background: linear-gradient(-90deg, #d17122 10%, #a6669a 60%, #6b30eb 80%);
   -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(45deg, #e7a55a 0 40%, rgba(120, 64, 239, 0.7) 50% 100%);
+  -webkit-text-fill-color: transparent;
 }
 .nom--Trois {
   font-family: "Sacramento";
   font-size: 3rem;
-  background-clip: text;
+  color: #335cf0;
+  background: linear-gradient(90deg, #335cf0, rgba(179, 205, 228, 0.5));
   -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(90deg, #335cf0, rgba(179, 205, 228, 0.5));
+  -webkit-text-fill-color: transparent;
 }
 .nom--Quatre {
   font-family: "Satisfy";
-  background-clip: text;
+  color: #265e1f;
+  background: linear-gradient(-45deg, rgba(38, 94, 31, 0.7), rgba(187, 255, 119, 0.3));
   -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(180deg, #265e1f, rgba(187, 255, 119, 0.5));
+  -webkit-text-fill-color: transparent;
 }
 
 .titre {
